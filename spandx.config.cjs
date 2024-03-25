@@ -3,7 +3,7 @@ const path = require('node:path');
 
 const element = [...process.argv].pop();
 
-if (!element.match(/^rhx-/)) {
+if (!element.match(/^rh-/)) {
   // eslint-disable-next-line no-console
   console.log('Please specify a component e.g.', '\n\tnpm run proxy rh-footer');
   process.exit(1);
@@ -22,7 +22,7 @@ async function injectLocalSources(_req, res, next) {
 
     const importMapJson = JSON.stringify({
       imports: {
-        '@rhds/elements': 'http://localhost:8000/rhds.min.js',
+        '@rhx/elements': 'http://localhost:8000/rhx.min.js',
         ...Object.fromEntries(elements.map(dir => [
           `@rhds/elements/${dir}/${dir}.js`,
           `http://localhost:8000/elements/${dir}/${dir}.ts`
