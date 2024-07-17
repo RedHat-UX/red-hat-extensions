@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include "../partials/meta.html" %}
+
+    <script type="importmap">{{ importMap | dump(2) | safe }}</script>
+
+    {# load all components #}
+    {% for tag in importElements %}
+      <script type="module">import '@rhds/elements/{{tag}}/{{tag}}.js';</script>
+    {% endfor %}
+
+    {# pficon configuration #}
+    <script type="module">
+      import { PfIcon } from '@patternfly/elements/pf-icon/pf-icon.js';
+      PfIcon.getIconUrl = (set, icon) =>
+        new URL(`/assets/packages/@patternfly/icons/${set}/${icon}.js`, location.origin);
+    </script>
+
+    <link rel="stylesheet" href="/styles/styles.css">
+
+  </head>
+  <body>
+   {{ content | safe }}
+  </body>
+</html>

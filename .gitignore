@@ -20,7 +20,7 @@ lib/**/*.js
 *.tsbuildinfo
 custom-elements.json
 test-results.xml
-rhds.min.js
+rhx.min.js
 *LEGAL.txt
 *.tgz
 

@@ -1,0 +1,9 @@
+---
+permalink: "{{ doc.permalink }}"
+pagination:
+  data: collections.elementDocs
+  alias: doc
+  size: 1
+---
+{% renderFile doc.filePath, doc.docsPage %}
+
