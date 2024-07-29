@@ -37,23 +37,17 @@
   <rhx-grid-item row-span="2xs:2" col-span="2xs:3">2xs row span: 2</rhx-grid-item>
   <rhx-grid-item col-span="2xs:3">Grid Item 3</rhx-grid-item>
   <rhx-grid-item col-span="2xs:3">Grid Item 4</rhx-grid-item>
-  <!-- end row 1 -->
   <!-- row 2 -->
-  <rhx-grid-item col-span="2xs:3">Grid Item 5</rhx-grid-item>
+  <rhx-grid-item row-span="2xs:3" col-span="2xs:3">Grid Item 5</rhx-grid-item>
   <rhx-grid-item col-span="2xs:3">Grid Item 6</rhx-grid-item>
-  <!-- end row 2 -->
   <!-- row 3 -->
   <rhx-grid-item col-span="2xs:3">Grid Item 7</rhx-grid-item>
   <rhx-grid-item col-span="2xs:3">Grid Item 8</rhx-grid-item>
   <rhx-grid-item col-span="2xs:3">Grid Item 9</rhx-grid-item>
-  <rhx-grid-item col-span="2xs:3">Grid Item 10</rhx-grid-item>
-  <!-- end row 3 -->
   <!-- row 4 -->
+  <rhx-grid-item col-span="2xs:3">Grid Item 10</rhx-grid-item>
   <rhx-grid-item col-span="2xs:3">Grid Item 11</rhx-grid-item>
   <rhx-grid-item col-span="2xs:3">Grid Item 12</rhx-grid-item>
-  <rhx-grid-item col-span="2xs:3">Grid Item 13</rhx-grid-item>
-  <rhx-grid-item col-span="2xs:3">Grid Item 14</rhx-grid-item>
-  <!-- end row 4 -->
 </rhx-grid>
 
 <h2>Offsets</h2>
@@ -67,7 +61,8 @@
 </rhx-grid>
 
 <style>
-  rhx-grid-item[row-span="2xs:2"][col-span="2xs:3"] {
+  rhx-grid-item[row-span="2xs:2"][col-span="2xs:3"],
+  rhx-grid-item[row-span="2xs:3"][col-span="2xs:3"] {
     background-color: rebeccapurple;
     color: white;
   }
