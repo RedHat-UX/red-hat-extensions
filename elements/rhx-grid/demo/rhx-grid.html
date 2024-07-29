@@ -19,21 +19,58 @@
 </rhx-grid>
 
 <h2>Spans</h2>
+
+<h3>Columns</h3>
 <rhx-grid>
-  <rhx-grid-item span="sm:6">sm span 6</rhx-grid-item>
-  <rhx-grid-item span="sm:6">sm span 6</rhx-grid-item>
-  <rhx-grid-item span="sm:6 xl:3">sm span 6, xl span 3</rhx-grid-item>
-  <rhx-grid-item span="sm:6 xl:3">sm span 6, xl span 3</rhx-grid-item>
-  <rhx-grid-item span="sm:6 xl:3">sm span 6, xl span 3</rhx-grid-item>
-  <rhx-grid-item span="sm:6 xl:3">sm span 6, xl span 3</rhx-grid-item>
+  <rhx-grid-item col-span="sm:6">sm span 6</rhx-grid-item>
+  <rhx-grid-item col-span="sm:6">sm span 6</rhx-grid-item>
+  <rhx-grid-item col-span="sm:6 xl:3">sm span 6, xl span 3</rhx-grid-item>
+  <rhx-grid-item col-span="sm:6 xl:3">sm span 6, xl span 3</rhx-grid-item>
+  <rhx-grid-item col-span="sm:6 xl:3">sm span 6, xl span 3</rhx-grid-item>
+  <rhx-grid-item col-span="sm:6 xl:3">sm span 6, xl span 3</rhx-grid-item>
+</rhx-grid>
+
+<h3>Rows</h3>
+<rhx-grid>
+  <!-- row 1 -->
+  <rhx-grid-item row-span="2xs:2" col-span="2xs:3">2xs row span: 2</rhx-grid-item>
+  <rhx-grid-item row-span="2xs:2" col-span="2xs:3">2xs row span: 2</rhx-grid-item>
+  <rhx-grid-item col-span="2xs:3">Grid Item 3</rhx-grid-item>
+  <rhx-grid-item col-span="2xs:3">Grid Item 4</rhx-grid-item>
+  <!-- end row 1 -->
+  <!-- row 2 -->
+  <rhx-grid-item col-span="2xs:3">Grid Item 5</rhx-grid-item>
+  <rhx-grid-item col-span="2xs:3">Grid Item 6</rhx-grid-item>
+  <!-- end row 2 -->
+  <!-- row 3 -->
+  <rhx-grid-item col-span="2xs:3">Grid Item 7</rhx-grid-item>
+  <rhx-grid-item col-span="2xs:3">Grid Item 8</rhx-grid-item>
+  <rhx-grid-item col-span="2xs:3">Grid Item 9</rhx-grid-item>
+  <rhx-grid-item col-span="2xs:3">Grid Item 10</rhx-grid-item>
+  <!-- end row 3 -->
+  <!-- row 4 -->
+  <rhx-grid-item col-span="2xs:3">Grid Item 11</rhx-grid-item>
+  <rhx-grid-item col-span="2xs:3">Grid Item 12</rhx-grid-item>
+  <rhx-grid-item col-span="2xs:3">Grid Item 13</rhx-grid-item>
+  <rhx-grid-item col-span="2xs:3">Grid Item 14</rhx-grid-item>
+  <!-- end row 4 -->
 </rhx-grid>
 
 <h2>Offsets</h2>
 <rhx-grid>
-  <rhx-grid-item span="sm:4" start="sm:2">Span 4 at small, start 2</rhx-grid-item>
-  <rhx-grid-item span="sm:4" start="sm:8">Span 4 at small, start 8</rhx-grid-item>
-  <rhx-grid-item span="sm:5 xl:2" start="sm:2 xl:2">sm span 5 start 2, xl span 2 start 2</rhx-grid-item>
-  <rhx-grid-item span="sm:5 xl:2" start="sm:8 xl:5">sm span 5 start 8, xl span 2 start 4</rhx-grid-item>
-  <rhx-grid-item span="sm:5 xl:2" start="sm:2 xl:8">sm span 5 start 2, xl span 2 start 8</rhx-grid-item>
-  <rhx-grid-item span="sm:5 xl:2" start="sm:8 xl:11">sm span 5 start 8, xl span 2 start 11</rhx-grid-item>
+  <rhx-grid-item col-span="sm:4" start="sm:2">Span 4 at small, start 2</rhx-grid-item>
+  <rhx-grid-item col-span="sm:4" start="sm:8">Span 4 at small, start 8</rhx-grid-item>
+  <rhx-grid-item col-span="sm:5 xl:2" start="sm:2 xl:2">sm span 5 start 2, xl span 2 start 2</rhx-grid-item>
+  <rhx-grid-item col-span="sm:5 xl:2" start="sm:8 xl:5">sm span 5 start 8, xl span 2 start 4</rhx-grid-item>
+  <rhx-grid-item col-span="sm:5 xl:2" start="sm:2 xl:8">sm span 5 start 2, xl span 2 start 8</rhx-grid-item>
+  <rhx-grid-item col-span="sm:5 xl:2" start="sm:8 xl:11">sm span 5 start 8, xl span 2 start 11</rhx-grid-item>
 </rhx-grid>
+
+<style>
+  rhx-grid-item[row-span="2xs:2"][col-span="2xs:3"] {
+    background-color: rebeccapurple;
+    color: white;
+  }
+</style>
+
+<script type="module" src="../rhx-grid.js"></script>
