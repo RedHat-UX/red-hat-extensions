@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="../rhx-grid-container-lightdom.css">
 
 <h1>Container Query based grid</h1>
-<p>NOTE: Grid must be placed inside a parent with a CSS rule of `container-type: inline-size;`</p>
+<p><strong>NOTE:</strong> Grid must be placed inside a parent with a CSS rule of `container-type: inline-size;`</p>
+<p>Container is resizable, drag the bottom right corner to see the grid adjust</p>
+
 
 <div id="container">
   <h2>Simple</h2>
@@ -90,7 +92,11 @@
 
 <style>
   #container {
+    display: block;
     container-type: inline-size;
+    resize: horizontal;
+    overflow: auto;
+    padding-block-end: 32px;
   }
 
   rhx-grid {
