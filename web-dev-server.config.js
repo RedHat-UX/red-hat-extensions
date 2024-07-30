@@ -42,6 +42,17 @@ export default pfeDevServerConfig({
   middleware: [
     /** redirect requests for /assets/ css to /docs/assets/ */
     function(ctx, next) {
+      const match = ctx.path.match(/^\/elements\/(?<slug>[-\w]+)\/(?<path>.*)\.css$/);
+      if (match) {
+        const { slug, path } = /** @type{{ slug: string; path: string }} */ (match.groups);
+        if (!slug.includes('rhx-')) {
+          ctx.redirect(`/elements/rhx-${slug}/${path}.css`);
+        }
+      }
+      return next();
+    },
+    /** redirect requests for /assets/ css to /docs/assets/ */
+    function(ctx, next) {
       if (ctx.path.startsWith('/styles/')) {
         ctx.redirect(`/docs${ctx.path}`);
       } else {
