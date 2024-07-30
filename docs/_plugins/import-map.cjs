@@ -32,14 +32,7 @@ function logPerf() {
 }
 
 /**
- * @typedef {object} Options
- * @property {string} [defaultProvider] jspm.io generator provider
- * @property {import('@jspm/generator').Generator['importMap']} [inputMap]
- * @property {import('@jspm/generator').Generator['importMap']} [manualImportMap]
- * @property {string[]} [localPackages=[]]
- * @property {string} nodemodulesPublicPath
- * @property {string} cwd
- * @property {AssetCache} assetCache
+ * [defaultProvider] jspm.io generator provider
  */
 
 /** @param {Options} opts */
@@ -142,7 +135,7 @@ module.exports = function(eleventyConfig, {
     });
   });
 
-  eleventyConfig.on('eleventy.beforeWatch', async function(/** @type {string[]} */ changedFiles) {
+  eleventyConfig.on('eleventy.beforeWatch', async function(changedFiles) {
     const files =
       changedFiles.filter(x => x.match(/eleventy\.config\.c?js$|importMap\.c?js$/));
     if (files.length) {

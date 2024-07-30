@@ -1,8 +1,9 @@
 // @ts-check
 Error.stackTraceLimit = 50;
 
-const { EleventyRenderPlugin } = require("@11ty/eleventy");
-const CustomElementsManifestPlugin = require('@patternfly/pfe-tools/11ty/plugins/custom-elements-manifest.cjs');
+const { EleventyRenderPlugin } = require('@11ty/eleventy');
+const CustomElementsManifestPlugin =
+  require('@patternfly/pfe-tools/11ty/plugins/custom-elements-manifest.cjs');
 const ExtensionsPlugin = require('./docs/_plugins/extensions.cjs');
 const ImportMapPlugin = require('./docs/_plugins/import-map.cjs');
 
@@ -23,7 +24,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('docs/styles/**/*');
 
   /** Bespoke import map for ux-dot pages and demos */
-  eleventyConfig.addPassthroughCopy({ 'node_modules/@lit/reactive-element': '/assets/packages/@lit/reactive-element' });
+  eleventyConfig.addPassthroughCopy({
+    'node_modules/@lit/reactive-element': '/assets/packages/@lit/reactive-element',
+  });
   eleventyConfig.addPassthroughCopy({ 'elements': 'assets/packages/@rhx/elements/elements/' });
   eleventyConfig.addPassthroughCopy({ 'lib': 'assets/packages/@rhx/elements/lib/' });
 

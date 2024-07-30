@@ -60,10 +60,9 @@ function getFilesToCopy() {
   // Copy element demo files
   const repoRoot = process.cwd();
   const tagNames = fs.readdirSync(path.join(repoRoot, 'elements'), { withFileTypes: true })
-    .filter(ent => ent.isDirectory())
-    .map(ent => ent.name);
+      .filter(ent => ent.isDirectory())
+      .map(ent => ent.name);
 
-  /** @type {import('@patternfly/pfe-tools/config.js').PfeConfig} */
   const config = require('../../.pfe.config.json');
 
   // Copy all component and core files to _site
@@ -78,7 +77,6 @@ function getFilesToCopy() {
 
 /**
  * Replace paths in demo files from the dev SPA's format to 11ty's format
- * @this {EleventyTransformContext}
  * @param {string} content
  */
 function demoPaths(content) {
@@ -107,10 +105,10 @@ function demoPaths(content) {
 /** @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig user config */
 module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('getTitleFromDocs', function(docs) {
-    return docs.find(x => x.docsPage?.title)?.alias ??
-    docs[0]?.alias ??
-    docs[0]?.docsPage?.title ??
-    eleventyConfig.getFilter('deslugify')(docs[0]?.slug);
+    return docs.find(x => x.docsPage?.title)?.alias
+    ?? docs[0]?.alias
+    ?? docs[0]?.docsPage?.title
+    ?? eleventyConfig.getFilter('deslugify')(docs[0]?.slug);
   });
 
   eleventyConfig.addFilter('makeSentenceCase', function(value) {
@@ -166,25 +164,24 @@ module.exports = function(eleventyConfig) {
 
     try {
       const { glob } = await import('glob');
-      /** @type {(import('@patternfly/pfe-tools/11ty/DocsPage').DocsPage & { repoStatus?: any[] })[]} */
       const elements = await eleventyConfig.globalData?.elements();
       const filePaths = (await glob(`elements/*/docs/*.md`, { cwd: process.cwd() }))
-        .filter(x => x.match(/\d{1,3}-[\w-]+\.md$/)); // only include new style docs
+          .filter(x => x.match(/\d{1,3}-[\w-]+\.md$/)); // only include new style docs
       const { repoStatus } = collectionApi.items.find(item => item.data?.repoStatus)?.data || [];
       return filePaths
-        .map(filePath => {
-          const props = getProps(filePath);
-          const docsPage = elements.find(x => x.tagName === props.tagName);
-          if (docsPage) {
-            docsPage.repoStatus = repoStatus;
-          }
-          const tabs = filePaths
-            .filter(x => x.split('/docs/').at(0) === (`elements/${props.tagName}`))
-            .sort()
-            .map(x => getProps(x));
-          return { docsPage, tabs, ...props };
-        })
-        .sort(alphabeticallyBySlug);
+          .map(filePath => {
+            const props = getProps(filePath);
+            const docsPage = elements.find(x => x.tagName === props.tagName);
+            if (docsPage) {
+              docsPage.repoStatus = repoStatus;
+            }
+            const tabs = filePaths
+                .filter(x => x.split('/docs/').at(0) === (`elements/${props.tagName}`))
+                .sort()
+                .map(x => getProps(x));
+            return { docsPage, tabs, ...props };
+          })
+          .sort(alphabeticallyBySlug);
     } catch (e) {
       // it's important to surface this
       // eslint-disable-next-line no-console

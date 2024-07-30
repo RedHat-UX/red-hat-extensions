@@ -8,11 +8,6 @@ import { glob } from 'glob';
 import valueParser from 'postcss-value-parser';
 
 /**
- * @typedef {object} Token
- * @property {string} name
- * @property {string} $description
- * @property {string} $type
- * @property {string|unknown} $value
  */
 
 /* eslint-disable no-console */
@@ -30,10 +25,16 @@ const syntaxes = new Map(Object.entries({
   shadow: '<shadow>',
 }));
 
-/** @return {decl is import('custom-elements-manifest').CustomElementDeclaration} */
+/** @returns {decl is import('custom-elements-manifest').CustomElementDeclaration} */
 const isCustomElementDeclaration = decl => decl.customElement;
 
-const exists = async path => { try { return !!await stat(path); } catch { return false; } };
+const exists = async path => {
+  try {
+    return !!await stat(path);
+  } catch {
+    return false;
+  }
+};
 
 const byLocaleName = (a, b) => a.name.localeCompare(b.name);
 
@@ -52,7 +53,7 @@ function* iterSystemTokens(value) {
 
 /**
  * @param {Token} token
- * @return {import('custom-elements-manifest').CssCustomProperty} token
+ * @returns {import('custom-elements-manifest').CssCustomProperty} token
  */
 function tokenToManifestCssProp(token) {
   return {
@@ -90,7 +91,7 @@ function addSystemTokensToMap(map, node) {
  * get all tokens, by name, for a given custom element declaration and it's module path
  * @param {import('custom-elements-manifest').CustomElementDeclaration} decl
  * @param {string} modPath module path for the declaration
- * @return {Promise<Map<string, Token>>}
+ * @returns {Promise<Map<string, Token>>}
  */
 async function getSystemTokensForCEDecl(decl, modPath) {
   const tokensForCustomElementDecl = new Map();

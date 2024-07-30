@@ -9,9 +9,9 @@ describe('<rhx-grid>', function() {
       element = await createFixture<RhxGrid>(html`<rhx-grid></rhx-grid>`);
       const klass = customElements.get('rhx-grid');
       expect(element)
-        .to.be.an.instanceOf(klass)
-        .and
-        .to.be.an.instanceOf(RhxGrid);
+          .to.be.an.instanceOf(klass)
+          .and
+          .to.be.an.instanceOf(RhxGrid);
     });
-  })
+  });
 });
