@@ -1365,5 +1365,5 @@ rhx-grid-item[row-span~="2xs:12"] {
 
   rhx-grid-item[row-span~="2xl:12"] {
     grid-row: span 12;
-  }  
+  }
 }
