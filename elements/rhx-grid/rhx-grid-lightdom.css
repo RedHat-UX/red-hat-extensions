@@ -112,47 +112,47 @@ rhx-grid:not([query="container"]) > rhx-grid-item[col-span~="2xs:12"] {
   grid-column: auto/span 12;
 }
 
-rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xs:2"] {
+rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xs:2"] {
   grid-column-start: 2;
 }
 
-rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xs:3"] {
+rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xs:3"] {
   grid-column-start: 3;
 }
 
-rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xs:4"] {
+rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xs:4"] {
   grid-column-start: 4;
 }
 
-rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xs:5"] {
+rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xs:5"] {
   grid-column-start: 5;
 }
 
-rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xs:6"] {
+rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xs:6"] {
   grid-column-start: 6;
 }
 
-rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xs:7"] {
+rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xs:7"] {
   grid-column-start: 7;
 }
 
-rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xs:8"] {
+rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xs:8"] {
   grid-column-start: 8;
 }
 
-rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xs:9"] {
+rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xs:9"] {
   grid-column-start: 9;
 }
 
-rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xs:10"] {
+rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xs:10"] {
   grid-column-start: 10;
 }
 
-rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xs:11"] {
+rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xs:11"] {
   grid-column-start: 11;
 }
 
-rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xs:12"] {
+rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xs:12"] {
   grid-column-start: 12;
 }
 
@@ -301,51 +301,51 @@ rhx-grid:not([query="container"]) > rhx-grid-item[row-span~="2xs:12"] {
     grid-column: auto/span 12;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xs:1"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xs:1"] {
     grid-column-start: 1;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xs:2"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xs:2"] {
     grid-column-start: 2;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xs:3"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xs:3"] {
     grid-column-start: 3;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xs:4"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xs:4"] {
     grid-column-start: 4;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xs:5"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xs:5"] {
     grid-column-start: 5;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xs:6"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xs:6"] {
     grid-column-start: 6;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xs:7"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xs:7"] {
     grid-column-start: 7;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xs:8"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xs:8"] {
     grid-column-start: 8;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xs:9"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xs:9"] {
     grid-column-start: 9;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xs:10"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xs:10"] {
     grid-column-start: 10;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xs:11"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xs:11"] {
     grid-column-start: 11;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xs:12"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xs:12"] {
     grid-column-start: 12;
   }
 
@@ -495,51 +495,51 @@ rhx-grid:not([query="container"]) > rhx-grid-item[row-span~="2xs:12"] {
     grid-column: auto/span 12;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="sm:1"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="sm:1"] {
     grid-column-start: 1;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="sm:2"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="sm:2"] {
     grid-column-start: 2;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="sm:3"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="sm:3"] {
     grid-column-start: 3;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="sm:4"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="sm:4"] {
     grid-column-start: 4;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="sm:5"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="sm:5"] {
     grid-column-start: 5;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="sm:6"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="sm:6"] {
     grid-column-start: 6;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="sm:7"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="sm:7"] {
     grid-column-start: 7;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="sm:8"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="sm:8"] {
     grid-column-start: 8;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="sm:9"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="sm:9"] {
     grid-column-start: 9;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="sm:10"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="sm:10"] {
     grid-column-start: 10;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="sm:11"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="sm:11"] {
     grid-column-start: 11;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="sm:12"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="sm:12"] {
     grid-column-start: 12;
   }
 
@@ -689,51 +689,51 @@ rhx-grid:not([query="container"]) > rhx-grid-item[row-span~="2xs:12"] {
     grid-column: auto/span 12;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="md:1"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="md:1"] {
     grid-column-start: 1;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="md:2"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="md:2"] {
     grid-column-start: 2;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="md:3"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="md:3"] {
     grid-column-start: 3;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="md:4"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="md:4"] {
     grid-column-start: 4;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="md:5"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="md:5"] {
     grid-column-start: 5;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="md:6"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="md:6"] {
     grid-column-start: 6;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="md:7"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="md:7"] {
     grid-column-start: 7;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="md:8"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="md:8"] {
     grid-column-start: 8;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="md:9"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="md:9"] {
     grid-column-start: 9;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="md:10"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="md:10"] {
     grid-column-start: 10;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="md:11"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="md:11"] {
     grid-column-start: 11;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="md:12"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="md:12"] {
     grid-column-start: 12;
   }
 
@@ -883,51 +883,51 @@ rhx-grid:not([query="container"]) > rhx-grid-item[row-span~="2xs:12"] {
     grid-column: auto/span 12;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="lg:1"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="lg:1"] {
     grid-column-start: 1;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="lg:2"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="lg:2"] {
     grid-column-start: 2;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="lg:3"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="lg:3"] {
     grid-column-start: 3;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="lg:4"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="lg:4"] {
     grid-column-start: 4;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="lg:5"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="lg:5"] {
     grid-column-start: 5;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="lg:6"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="lg:6"] {
     grid-column-start: 6;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="lg:7"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="lg:7"] {
     grid-column-start: 7;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="lg:8"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="lg:8"] {
     grid-column-start: 8;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="lg:9"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="lg:9"] {
     grid-column-start: 9;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="lg:10"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="lg:10"] {
     grid-column-start: 10;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="lg:11"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="lg:11"] {
     grid-column-start: 11;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="lg:12"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="lg:12"] {
     grid-column-start: 12;
   }
 
@@ -1077,51 +1077,51 @@ rhx-grid:not([query="container"]) > rhx-grid-item[row-span~="2xs:12"] {
     grid-column: auto/span 12;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xl:1"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xl:1"] {
     grid-column-start: 1;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xl:2"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xl:2"] {
     grid-column-start: 2;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xl:3"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xl:3"] {
     grid-column-start: 3;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xl:4"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xl:4"] {
     grid-column-start: 4;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xl:5"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xl:5"] {
     grid-column-start: 5;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xl:6"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xl:6"] {
     grid-column-start: 6;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xl:7"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xl:7"] {
     grid-column-start: 7;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xl:8"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xl:8"] {
     grid-column-start: 8;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xl:9"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xl:9"] {
     grid-column-start: 9;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xl:10"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xl:10"] {
     grid-column-start: 10;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xl:11"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xl:11"] {
     grid-column-start: 11;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="xl:12"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="xl:12"] {
     grid-column-start: 12;
   }
 
@@ -1271,51 +1271,51 @@ rhx-grid:not([query="container"]) > rhx-grid-item[row-span~="2xs:12"] {
     grid-column: auto/span 12;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xl:1"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xl:1"] {
     grid-column-start: 1;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xl:2"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xl:2"] {
     grid-column-start: 2;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xl:3"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xl:3"] {
     grid-column-start: 3;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xl:4"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xl:4"] {
     grid-column-start: 4;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xl:5"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xl:5"] {
     grid-column-start: 5;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xl:6"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xl:6"] {
     grid-column-start: 6;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xl:7"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xl:7"] {
     grid-column-start: 7;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xl:8"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xl:8"] {
     grid-column-start: 8;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xl:9"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xl:9"] {
     grid-column-start: 9;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xl:10"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xl:10"] {
     grid-column-start: 10;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xl:11"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xl:11"] {
     grid-column-start: 11;
   }
 
-  rhx-grid:not([query="container"]) > rhx-grid-item[start~="2xl:12"] {
+  rhx-grid:not([query="container"]) > rhx-grid-item[col-start~="2xl:12"] {
     grid-column-start: 12;
   }
 
