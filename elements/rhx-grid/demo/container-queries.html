@@ -161,6 +161,18 @@
     );
     color: white;
   }
+
+  rhx-grid-item:has(rhx-grid-item) {
+    --_background-color: var(--rh-color-interactive-purple-darker, #5e40be);
+    background: repeating-linear-gradient(
+      45deg,
+      oklch(from var(--_background-color) l c h / calc(alpha - 0.075)),
+      oklch(from var(--_background-color) l c h / calc(alpha - 0.075)) 10px,
+      var(--_background-color) 10px,
+      var(--_background-color) 20px
+    );
+    color: white;
+  }
 </style>
 
 <script type="module">
