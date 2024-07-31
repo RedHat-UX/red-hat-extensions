@@ -7,8 +7,9 @@
 <div id="container">
 <h2>Simple</h2>
 
-<h3>Simple 12 columns</h3>
-<rhx-grid columns="2xs:1 xs:2 sm:4 lg:6 xl:12">
+<h3>Responsive 12 columns</h3>
+<p>columns="2xs:1 xs:2 sm:4 lg:6 xl:12"</p>
+<rhx-grid query="container" columns="2xs:1 xs:2 sm:4 lg:6 xl:12">
   <div>Grid Item 1</div>
   <div>Grid Item 2</div>
   <div>Grid Item 3</div>
@@ -24,16 +25,37 @@
 </rhx-grid>
 
 
-<h3>Simple 2 column</h3>
-<rhx-grid columns="2xs:2">
+<h3>Column count</h3>
+<h4>Using breakpoint columns</h4>
+<p>columns="2xs:2"</p>
+<rhx-grid query="container" columns="2xs:2">
   <div>Grid Item 1</div>
   <div>Grid Item 2</div>
   <div>Grid Item 3</div>
   <div>Grid Item 4</div>
 </rhx-grid>
 
-<h3>Simple 3 column</h3>
-<rhx-grid columns="2xs:3">
+<h4>Setting column CSS var</h4>
+<p>style="--rhx-grid-columns: 2"</p>
+<rhx-grid query="container" style="--rhx-grid-columns: 2">
+  <div>Grid Item 1</div>
+  <div>Grid Item 2</div>
+  <div>Grid Item 3</div>
+  <div>Grid Item 4</div>
+</rhx-grid>
+
+<h4>Setting item span</h4>
+<p>rhx-grid-item col-span="2xs:1"</p>
+<rhx-grid query="container" style="--rhx-grid-columns: 2">
+  <rhx-grid-item col-span="2xs:1">col-span="2xs:1"</rhx-grid-item>
+  <rhx-grid-item col-span="2xs:1">col-span="2xs:1"</rhx-grid-item>
+  <rhx-grid-item col-span="2xs:1">col-span="2xs:1"</rhx-grid-item>
+  <rhx-grid-item col-span="2xs:1">col-span="2xs:1"</rhx-grid-item>
+</rhx-grid>
+
+<h3>3 columns</h3>
+<p>columns="2xs:3"</p>
+<rhx-grid query="container" columns="2xs:3">
   <div>Grid Item 1</div>
   <div>Grid Item 2</div>
   <div>Grid Item 3</div>
@@ -48,7 +70,7 @@
   <div>Grid Item 12</div>
 </rhx-grid>
 
-<h2>Spans</h2>
+<h2>Item Spans</h2>
 
 <h3>Columns</h3>
 <rhx-grid query="container">
@@ -80,7 +102,7 @@
   <rhx-grid-item col-span="2xs:3">col-span="2xs:3"</rhx-grid-item>
 </rhx-grid>
 
-<h2>Offsets</h2>
+<h2>Item Offsets</h2>
 <rhx-grid query="container">
   <rhx-grid-item col-span="2xs:12 sm:4" col-start="sm:2">col-span="2xs:12 sm:4" col-start="sm:2"</rhx-grid-item>
   <rhx-grid-item col-span="2xs:12 sm:4" col-start="sm:8">col-span="2xs:12 sm:4" col-start="sm:8"</rhx-grid-item>
@@ -106,6 +128,7 @@
   <rhx-grid-item col-span="2xs:2 xl:3">col-span="2xs:2 xl:3"</rhx-grid-item>
   <rhx-grid-item col-span="2xs:10 xl:3">col-span="2xs:10 xl:3"</rhx-grid-item>
 </rhx-grid>
+
 </div>
 
 <style>
