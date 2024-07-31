@@ -88,6 +88,20 @@
     <rhx-grid-item col-span="2xs:12 sm:5 xl:2" col-start="sm:8 xl:11">2xs span 12,sm span 5 start 8, xl span 2 start 11</rhx-grid-item>
   </rhx-grid>
 
+  <h2>SubGrid</h2>
+  <rhx-grid query="container">
+    <rhx-grid-item col-span="2xs:4">2xs span 4</rhx-grid-item>
+    <rhx-grid-item col-span="2xs:8">2xs span 8</rhx-grid-item>
+    <rhx-grid-item col-span="2xs:8 xl:3">
+      <rhx-grid-item col-span="2xs:8 sm:4 xl:3">Sub Grid Col 1 Span 3</rhx-grid-item>
+      <rhx-grid-item col-span="2xs:8 sm:4 xl:1">Sub Grid Col 2 Span 1</rhx-grid-item>
+      <rhx-grid-item col-span="2xs:8 sm:4 xl:1">Sub Grid Col 3 Span 1</rhx-grid-item>
+      <rhx-grid-item col-span="2xs:8 sm:4 xl:1">Sub Grid Col 4 Span 1</rhx-grid-item>
+    </rhx-grid-item>
+    <rhx-grid-item col-span="2xs:4 xl:3">2xs span 4, xl span 3</rhx-grid-item>
+    <rhx-grid-item col-span="2xs:2 xl:3">2xs span 2, xl span 3</rhx-grid-item>
+    <rhx-grid-item col-span="2xs:10 xl:3">2xs span 10, xl span 3</rhx-grid-item>
+  </rhx-grid>
 </div>
 
 <style>
