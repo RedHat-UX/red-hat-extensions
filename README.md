@@ -1,2 +1,2 @@
-# Red Hat Extra
+# Red Hat Extensions
 
