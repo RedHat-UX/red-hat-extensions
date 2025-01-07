@@ -8,18 +8,19 @@ on:
 jobs:
   release:
     # Prevents changesets action from creating a PR on forks
-    if: github.repository == 'RedHat-UX/red-hat-exta'
+    if: github.repository == 'RedHat-UX/red-hat-extensions'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version-file: .nvmrc
           cache: npm
 
-      - uses: google/wireit@setup-github-actions-caching/v1
+      - uses: google/wireit@setup-github-actions-caching/v2
 
       - run: npm ci --prefer-offline
+      - run: npx tspc
       - run: npm run build
 
       - name: Create Release Pull Request or Publish to npm
