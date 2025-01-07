@@ -1,0 +1,37 @@
+@layer page {
+  article {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "content";
+    row-gap: var(--rh-space-4xl);
+
+    @container main (min-width: 992px) {
+      row-gap: var(--rh-space-6xl);
+    }
+
+    @container main (min-width: 1440px) {
+      grid-template-columns:
+      minmax(
+          var(--container-min-width),
+          var(--container-max-width)
+        )
+      minmax(14rem, 1fr);
+      grid-template-areas:
+        "header header"
+        "content content";
+    }
+  }
+
+  uxdot-header {
+    grid-area: header;
+  }
+
+  .container {
+    grid-area: content;
+    container-type: inline-size;
+    container-name: container;
+  }
+}

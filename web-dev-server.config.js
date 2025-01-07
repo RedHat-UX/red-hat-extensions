@@ -1,6 +1,7 @@
 // @ts-check
 import { pfeDevServerConfig } from '@patternfly/pfe-tools/dev-server/config.js';
 import { glob } from 'glob';
+import { readdir, stat } from 'node:fs/promises';
 
 /**
  * Find all modules in a glob pattern, relative to the repo root, and resolve them as package paths
@@ -27,15 +28,17 @@ export default pfeDevServerConfig({
   litcssOptions,
   importMapOptions: {
     providers: {
-      '@patternfly/icons': 'nodemodules',
+      '@rhds/elements': 'nodemodules',
+      '@rhds/icons': 'nodemodules',
       '@patternfly/elements': 'nodemodules',
       '@patternfly/pfe-tools': 'nodemodules',
       '@patternfly/pfe-core': 'nodemodules',
-      '@rhds/elements': 'nodemodules',
     },
     inputMap: {
       imports: {
+        '@rhds/icons': './node_modules/@rhds/icons/icons.js',
         ...await resolveLocal('./elements/**/*.js', x => [`@rhx/elements/${x.replace('elements/', '')}`, `./${x}`]),
+        ...await getRhdsIconNodemodulesImports(import.meta.url),
       },
     },
   },
@@ -84,3 +87,26 @@ export default pfeDevServerConfig({
     },
   ],
 });
+
+// eslint-disable-next-line jsdoc/require-jsdoc
+export async function getRhdsIconNodemodulesImports(
+  rootUrl,
+) {
+  const files = await readdir(new URL('./node_modules/@rhds/icons/', rootUrl));
+  const dirs = [];
+
+  for (const dir of files) {
+    if (!dir.startsWith('.') && (await stat(new URL(`./node_modules/@rhds/icons/${dir}`, rootUrl))).isDirectory()) {
+      dirs.push(dir);
+    }
+  }
+
+  const specs = await Promise.all(dirs.flatMap(dir =>
+    readdir(new URL(`./node_modules/@rhds/icons/${dir}`, rootUrl))
+        .then(files => files.filter(x => x.endsWith('.js')))
+        .then(icons => icons.flatMap(icon => `@rhds/icons/${dir}/${icon}`))
+  ));
+
+  return Object.fromEntries(specs.flat().map(spec => [spec, `./node_modules/${spec}`]));
+}
+

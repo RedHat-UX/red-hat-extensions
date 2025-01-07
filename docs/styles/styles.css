@@ -1,3 +1,155 @@
-@layer grid;
+@layer reset, tokens, fonts, typography, base, layout, flow, patterns;
 
-@import url("grid.css") layer(grid);
+@import url("reset.css") layer(reset);
+@import url("/assets/packages/@rhds/tokens/css/global.css") layer(tokens);
+@import url("fonts.css") layer(fonts);
+@import url("typography.css") layer(typography);
+@import url("lightdom.css") layer(lightdom);
+
+@layer base {
+  body {
+    color: var(--rh-color-text-primary-on-light, #151515);
+  }
+
+  :where(p, ul, ol, dl) {
+    font-size: var(--rh-font-size-body-text-lg, 1.125rem);
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    font-weight: var(--rh-font-weight-heading-medium, 500);
+  }
+
+  a {
+    color: var(--rh-color-interactive-blue-darker, #0066cc);
+  }
+
+  a:hover {
+    color: var(--rh-color-interactive-blue-darkest, #003366);
+  }
+
+  a:visited {
+    color: var(--rh-color-interactive-purple-darker, #5e40be);
+  }
+
+  hr {
+    border-block-start:
+      var(--rh-border-width-sm, 1px)
+      solid
+      var(--rh-color-border-subtle-on-light, #c7c7c7);
+    border-inline: none;
+    border-block-end: none;
+    margin-block-end: var(--rh-space-2xl, 32px);
+  }
+
+  figure > img {
+    max-width: 100%;
+  }
+
+  figcaption {
+    color: var(--rh-color-text-secondary-on-light, #4d4d4d);
+  }
+}
+
+@layer layout {
+  :root {
+    --container-min-width: 992px;
+    --container-max-width: 1332px;
+    --uxdot-masthead-max-height: 72px;
+  }
+
+  body {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    grid-template-areas: "header" "main" "footer";
+    grid-template-rows: var(--uxdot-masthead-max-height) 1fr max-content;
+    position: relative;
+    min-height: 100dvh;
+
+    &:has(uxdot-sidenav:not(:defined)) {
+      grid-template-rows: max-content max-content 1fr max-content;
+      grid-template-areas: "header" "nav" "main" "footer";
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: minmax(300px, 320px) max-content 1fr;
+      grid-template-areas:
+        "header header header"
+        "nav main main"
+        "nav footer footer";
+
+      &:has(uxdot-sidenav:not(:defined)) {
+        grid-template-areas:
+          "header header header"
+          "nav main main"
+          "nav footer footer";
+      }
+    }
+  }
+
+  main {
+    container-type: inline-size;
+    container-name: main;
+    grid-area: main;
+    border-inline-start: var(--rh-border-width-sm) solid var(--rh-color-border-subtle-on-light);
+    padding-block-end: var(--rh-space-6xl);
+  }
+
+  uxdot-masthead {
+    grid-area: header;
+  }
+
+  uxdot-sidenav {
+    grid-area: nav;
+  }
+
+  rh-footer-universal {
+    grid-area: footer;
+  }
+
+  .container {
+    container-type: inline-size;
+    container-name: container;
+    padding-inline: var(--rh-space-lg, 16px);
+    padding-block-end: var(--rh-space-lg, 16px);
+
+    @container main (min-width: 576px) {
+      padding-inline: var(--rh-space-2xl, 32px);
+      padding-block-end: var(--rh-space-2xl, 32px);
+    }
+
+    @container main (min-width: 768px) { 
+      padding-inline: var(--rh-space-3xl, 48px);
+      padding-block-end: var(--rh-space-3xl, 48px);      
+    }
+
+    @container main (min-width: 992px) {
+      max-width: var(--container-max-width);
+      padding-inline: var(--rh-space-6xl, 96px);
+      padding-block-start: 0;
+      padding-block-end: var(--rh-space-6xl, 96px);
+    }
+  }
+}
+
+@layer flow {
+  :where(p, ul, ol, dl) {
+    margin-block-start: var(--rh-space-lg, 16px);
+    margin-block-end: var(--rh-space-2xl, 32px);
+  }
+
+  :where(li) {
+    margin-block: var(--rh-space-md, 8px);
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    margin-block-end: var(--rh-space-lg, 16px);
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) + :where(h2, h3, h4, h5, h6) {
+    margin-block-start: var(--rh-space-2xl, 32px);
+  }
+}
+
+@layer patterns {
+
+}

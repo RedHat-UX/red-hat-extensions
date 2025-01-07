@@ -3,10 +3,10 @@ const { join } = require('node:path');
 const { pathToFileURL } = require('node:url');
 const { AssetCache } = require('@11ty/eleventy-fetch');
 
-function logPerf() {
+async function logPerf() {
   // We should log performance regressions
   /* eslint-disable no-console */
-  const chalk = require('chalk');
+  const { default: chalk } = await import('chalk');
   const TOTAL = performance.measure('importMap-total', 'importMap-start', 'importMap-end');
   const RESOLVE = performance.measure(
     'importMap-resolve',
@@ -32,7 +32,14 @@ function logPerf() {
 }
 
 /**
- * [defaultProvider] jspm.io generator provider
+ * @typedef {object} Options
+ * @property {string} [defaultProvider] jspm.io generator provider
+ * @property {import('@jspm/generator').Generator['importMap']} [inputMap]
+ * @property {import('@jspm/generator').Generator['importMap']} [manualImportMap]
+ * @property {string[]} [localPackages=[]]
+ * @property {string} nodemodulesPublicPath
+ * @property {string} cwd
+ * @property {AssetCache} assetCache
  */
 
 /** @param {Options} opts */
@@ -121,7 +128,7 @@ module.exports = function(eleventyConfig, {
     eleventyConfig.addPassthroughCopy({ [`node_modules/${packageName}`]: `${nodemodulesPublicPath}/${packageName}` });
   }
 
-  const assetCache = new AssetCache('rhds-extensions-import-map');
+  const assetCache = new AssetCache('rhds-ux-dot-import-map');
 
   eleventyConfig.addGlobalData('importMap', async function cacheImportMap() {
     return getCachedImportMap({
@@ -135,7 +142,7 @@ module.exports = function(eleventyConfig, {
     });
   });
 
-  eleventyConfig.on('eleventy.beforeWatch', async function(changedFiles) {
+  eleventyConfig.on('eleventy.beforeWatch', async function(/** @type {string[]} */ changedFiles) {
     const files =
       changedFiles.filter(x => x.match(/eleventy\.config\.c?js$|importMap\.c?js$/));
     if (files.length) {
