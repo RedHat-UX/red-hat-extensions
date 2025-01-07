@@ -106,9 +106,8 @@
       "dependencies": [
         "patch",
         "analyze",
-        "compile",
-        "bundle",
-        "docs"
+        "entrypoint",
+        "compile"
       ]
     },
     "test": {
@@ -118,7 +117,7 @@
       ]
     },
     "compile": {
-      "command": "tspc",
+      "command": "tspc -b",
       "files": [
         "elements/**/*.ts",
         "lib/**/*.css",
@@ -136,8 +135,18 @@
         "!elements/*/{demo,test}/**/*.js"
       ]
     },
-    "bundle": {
-      "command": "node scripts/bundle.js"
+    "entrypoint": {
+      "command": "npx tsx scripts/generate-entry-point.ts",
+      "dependencies": [
+        "analyze"
+      ],
+      "files": [
+        "custom-elements.json",
+        "scripts/generate-entry-point.ts"
+      ],
+      "output": [
+        "elements.js"
+      ]
     },
     "analyze": {
       "command": "cem analyze && node scripts/cem-tokens.js && node scripts/system-tokens.js",
@@ -155,9 +164,7 @@
       "command": "eleventy",
       "dependencies": [
         "patch",
-        "analyze",
-        "compile",
-        "bundle"
+        "analyze"
       ],
       "files": [
         "docs"

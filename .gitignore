@@ -12,6 +12,7 @@ docs/_data/playgrounds.json
 docs/javascript/elements/**/*.js
 
 # Build artifacts
+elements.js
 elements/*/*.js
 elements/*/test/*.js
 lib/**/*.js
