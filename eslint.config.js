@@ -12,7 +12,6 @@ export default tseslint.config(
       'node_modules',
       'node_modules/**/*',
       '_site',
-      'rhx.min.js',
 
       '**/*.d.ts',
       '**/*.(spec|e2e).js',
