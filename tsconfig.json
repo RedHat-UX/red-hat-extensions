@@ -1,80 +1,18 @@
 {
-  "include": [
-    "./elements",
-    "./docs/javascript/elements",
-    "./lib",
-    "./declaration.d.ts"
-  ],
-  "exclude": [
-    "**/node_modules/**/*",
-    "_site",
-    "docs/**/*.js",
-    "scripts/*.js",
-    "elements/**/*.js",
-    "elements/*/test/**/*.js",
-    "elements/rh-secondary-nav/test/fixtures.js",
-    "**/*.spec.ts",
-    "**/*.e2e.ts",
-    "lib/**/*.js",
-    "./*.config.js"
-  ],
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "declaration": true,
-    "downlevelIteration": true,
-    "emitDeclarationOnly": false,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "incremental": true,
-    "inlineSources": true,
-    "module": "es2022",
-    "moduleResolution": "node",
-    "verbatimModuleSyntax": true,
-    "noEmitOnError": false,
-    "rootDir": ".",
-    "sourceMap": true,
-    "strict": true,
-    "target": "es2020",
-    "useDefineForClassFields": false,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./@types"
-    ],
-    "plugins": [
-      {
-        "transform": "@patternfly/pfe-tools/typescript/transformers/css-imports.cjs",
-        "inline": true,
-        "minify": true
-      },
-      {
-        "name": "typescript-lit-html-plugin"
-      },
-      {
-        "name": "ts-lit-plugin"
-      }
-    ],
-    "lib": [
-      "DOM.iterable",
-      "DOM",
-      "es2015.iterable",
-      "es2020",
-      "es2022",
-      "ESNext.Disposable",
-      "es5",
-      "es6",
-      "ScriptHost"
-    ],
-    "paths": {
-      "@rhds/elements/*": [
-        "./elements/*"
-      ],
-      "@rhds/elements/lib/*": [
-        "./lib/*"
-      ],
-      "@rhds/tokens/color.*": [
-        "./node_modules/@rhds/tokens/js/color.*"
-      ]
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./elements"
+    },
+    {
+      "path": "./lib"
+    },
+    {
+      "path": "./uxdot"
+    },
+    {
+      "path": "./docs"
     }
-  }
+  ]
 }

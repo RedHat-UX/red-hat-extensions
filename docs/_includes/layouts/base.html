@@ -51,7 +51,9 @@
 
     {% include "../partials/_sidenav.html" %}
 
-    {{ content | safe }}
+    <rh-surface id="main" color-palette="lightest" role="main">
+      {{ content | safe }}
+    </rh-surface>
 
     {% include "../partials/_footer.html" %}
   </body>

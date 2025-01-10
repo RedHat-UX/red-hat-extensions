@@ -1,13 +1,15 @@
-/* eslint-env node */
-import { readFile, writeFile, stat } from 'node:fs/promises';
+import { glob, readFile, writeFile, stat } from 'node:fs/promises';
 import { tokens } from '@rhds/tokens/meta.js';
 
-import { dirname } from 'node:path';
+import { dirname, join } from 'node:path';
 import { parse } from 'postcss';
-import { glob } from 'glob';
 import valueParser from 'postcss-value-parser';
 
 /**
+ * name token name
+ * $description token description
+ * $type token value type
+ * $value token value
  */
 
 /* eslint-disable no-console */
@@ -25,7 +27,10 @@ const syntaxes = new Map(Object.entries({
   shadow: '<shadow>',
 }));
 
-/** @returns {decl is import('custom-elements-manifest').CustomElementDeclaration} */
+/**
+ * @param {unknown} decl - possible custom element declaration
+ * @returns {decl is import('custom-elements-manifest').CustomElementDeclaration} the param is a ce decl
+ */
 const isCustomElementDeclaration = decl => decl.customElement;
 
 const exists = async path => {
@@ -52,8 +57,8 @@ function* iterSystemTokens(value) {
 }
 
 /**
- * @param {Token} token
- * @returns {import('custom-elements-manifest').CssCustomProperty} token
+ * @param {Token} token - design token
+ * @returns {import('custom-elements-manifest').CssCustomProperty} css custom property declaration
  */
 function tokenToManifestCssProp(token) {
   return {
@@ -89,19 +94,20 @@ function addSystemTokensToMap(map, node) {
 
 /**
  * get all tokens, by name, for a given custom element declaration and it's module path
- * @param {import('custom-elements-manifest').CustomElementDeclaration} decl
+ * @param {import('custom-elements-manifest').CustomElementDeclaration} decl ce declaration
  * @param {string} modPath module path for the declaration
- * @returns {Promise<Map<string, Token>>}
+ * @returns {Promise<Map<string, Token>>} all the design system tokens used in the element's shadow css
  */
 async function getSystemTokensForCEDecl(decl, modPath) {
   const tokensForCustomElementDecl = new Map();
   const dir = dirname(modPath);
   if (decl.tagName) {
     group('files:');
-    for (const cssFilePath of await glob([
-      `${dir}/${decl.tagName}.css`,
-      `${dir}/${decl.tagName}-lightdom.css`,
-    ], { absolute: true })) {
+    for await (const rel of glob([
+      `elements/${dir}/${decl.tagName}.css`,
+      `elements/${dir}/${decl.tagName}-lightdom.css`,
+    ])) {
+      const cssFilePath = join(process.cwd(), rel);
       log(cssFilePath);
       if (await exists(cssFilePath)) {
         const css = await readFile(cssFilePath, 'utf8');
@@ -132,7 +138,6 @@ function tokensToCEMCssProperties(tokens) {
 /** file to modify */
 const manifestUrl = new URL('../custom-elements.json', import.meta.url);
 
-/** @type{import('custom-elements-manifest').Package} */
 const manifest = JSON.parse(await readFile(manifestUrl, 'utf8'));
 
 for (const mod of manifest.modules) {

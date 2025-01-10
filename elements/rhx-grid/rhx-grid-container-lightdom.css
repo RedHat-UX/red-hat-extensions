@@ -8,8 +8,9 @@ rhx-grid[query="container"] {
   inline-size: 100%;
   grid-template-rows: repeat(var(--_rows), 1fr);
   grid-template-columns: repeat(var(--_columns), 1fr);
-  column-gap: var(--rhx-grid-column-gap, var(--rhx-grid-gap, var(--rh-space-2xl, 32px)));
-  row-gap: var(--rhx-grid-row-gap, var(--rhx-grid-gap, var(--rh-space-2xl, 32px)));
+  gap:
+    var(--rhx-grid-column-gap, var(--rhx-grid-gap, var(--rh-space-2xl, 32px)))
+    var(--rhx-grid-row-gap, var(--rhx-grid-gap, var(--rh-space-2xl, 32px)));
 }
 
 rhx-grid[columns~="2xs:1"][query="container"] {
@@ -229,8 +230,9 @@ rhx-grid[query="container"] rhx-grid-item[row-span~="2xs:12"] {
 rhx-grid[query="container"] rhx-grid-item:has(rhx-grid-item) {
   display: grid;
   grid-template-columns: subgrid;
-  column-gap: var(--rhx-grid-column-gap, var(--rhx-grid-gap, var(--rh-space-2xl, 32px)));
-  row-gap: var(--rhx-grid-row-gap, var(--rhx-grid-gap, var(--rh-space-2xl, 32px)));
+  gap:
+    var(--rhx-grid-column-gap, var(--rhx-grid-gap, var(--rh-space-2xl, 32px)))
+    var(--rhx-grid-row-gap, var(--rhx-grid-gap, var(--rh-space-2xl, 32px)));
 }
 
 @container (min-width: 576px) {

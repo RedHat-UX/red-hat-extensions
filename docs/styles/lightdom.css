@@ -1,5 +1,5 @@
 @layer masthead, sidenav, footer;
 
-@import url('../javascript/elements/uxdot-masthead/uxdot-masthead-lightdom.css') layer(masthead);
-@import url('../javascript/elements/uxdot-sidenav/uxdot-sidenav-lightdom.css') layer(sidenav);
+@import url('../assets/packages/@uxdot/elements/uxdot-masthead-lightdom.css') layer(masthead);
+@import url('../assets/packages/@uxdot/elements/uxdot-sidenav-lightdom.css') layer(sidenav);
 @import url('../assets/packages/@rhds/elements/elements/rh-footer/rh-footer-lightdom.css') layer(footer);

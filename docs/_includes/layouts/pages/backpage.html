@@ -4,11 +4,9 @@ importStyles:
   - 'pages/backpage'
 ---
 
-<main>
-  <article>
-    {% include "../../partials/_header.html" %}
-    <div class="container">
-      {{ content | safe }}
-    </div>
-  </article>
-</main>
+<article>
+  {% include "../../partials/_header.html" %}
+  <div class="container">
+    {{ content | safe }}
+  </div>
+</article>

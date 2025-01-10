@@ -1,0 +1,18 @@
+diff --git a/node_modules/@rhds/elements/lib/ssr-controller.d.ts b/node_modules/@rhds/elements/lib/ssr-controller.d.ts
+index 712fe2a..8a13468 100644
+--- a/node_modules/@rhds/elements/lib/ssr-controller.d.ts
++++ b/node_modules/@rhds/elements/lib/ssr-controller.d.ts
+@@ -1,11 +1,12 @@
+ import type { ReactiveController, ReactiveElement } from 'lit';
++import type { RenderInfo } from '@lit-labs/ssr';
+ export declare const ssrControllerMap: WeakMap<ReactiveElement, RHDSSSRController[]>;
+ /** This is experimental and may change at any time without warning */
+ export declare class RHDSSSRController implements ReactiveController {
+     host: ReactiveElement;
+     isRHDSSSRController: boolean;
+     /** @internal This is experimental and may change at any time without warning */
+-    ssrSetup?(): Promise<unknown>;
++    ssrSetup?(info?: RenderInfo): Promise<unknown>;
+     hostUpdate?(): void;
+     hostUpdate?(): void;
+     constructor(host: ReactiveElement);
