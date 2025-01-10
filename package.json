@@ -242,7 +242,7 @@
     "@patternfly/pfe-core": "^4.0.4",
     "@rhds/elements": "^2.1.1",
     "@rhds/icons": "^1.1.2",
-    "@rhds/tokens": "^2.1.0",
+    "@rhds/tokens": "^2.1.1",
     "lit": "^3.2.1",
     "tslib": "^2.7.0"
   },
