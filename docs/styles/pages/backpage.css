@@ -1,10 +1,3 @@
-/* article header {
-  background-color: var(--rh-color-surface-lighter, #f2f2f2);
-  padding: var(--rh-space-2xl, 32px);
-  margin-block-end: var(--rh-space-4xl, 64px);
-} */
-
-
 @layer page {
   article {
     display: grid;

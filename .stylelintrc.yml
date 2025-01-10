@@ -48,7 +48,7 @@ rules:
     - ignorePseudoElements:
       - /part(.*)/
 
-  '@stylistic/string-quotes': double
+  '@stylistic/string-quotes': single
   '@stylistic/selector-combinator-space-after': always
   '@stylistic/selector-combinator-space-before': always
   '@stylistic/function-parentheses-newline-inside': never-multi-line
