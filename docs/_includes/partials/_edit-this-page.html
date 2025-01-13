@@ -10,5 +10,9 @@
     {% endfor %}
   {% endif %}
   {% set editPath = ('/' + (inputPath or page.inputPath)) | replace(r/^(\.)?\//, '') %}
+
+  {% if '30-code.md' in editPath or '90-demos.md' in editPath %}
+    {% set editPath = 'docs/_includes/layouts/pages/elements.11ty.js' %}
+  {% endif %}
   <a href="https://github.com/RedHat-UX/red-hat-extensions/blob/main/{{ editPath }}?plain=1">Edit this page on GitHub</a>
 </div>
