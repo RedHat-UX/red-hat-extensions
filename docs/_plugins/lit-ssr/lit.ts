@@ -41,7 +41,6 @@ register('./lit-css-node.ts', import.meta.url);
  */
 export default async function(eleventyConfig: UserConfig, opts?: Options) {
   const imports = opts?.componentModules ?? [];
-  console.log(opts?.tsconfig);
   const tsconfig = opts?.tsconfig ?? './tsconfig.json';
 
   let pool: Piscina;
@@ -87,7 +86,6 @@ export default async function(eleventyConfig: UserConfig, opts?: Options) {
         }
         return trimOuterMarkers(rendered);
       } else {
-        
         return content;
       }
     });

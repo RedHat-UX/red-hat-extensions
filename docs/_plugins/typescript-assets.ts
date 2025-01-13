@@ -64,12 +64,12 @@ export default function(eleventyConfig: UserConfig) {
       ) {
         switch (args.patternGroups.scope) {
           case 'rhx':
-          case 'uxdot':
+          case 'uxdot': {
             const filePath = join(cwd, args.patternGroups.scope === 'uxdot' ? 'uxdot' : '.', `${args.patternGroups.path}.css`);
             const css = await readFile(filePath, 'utf8');
             if (args.patternGroups.path.includes('lightdom')) {
               return { body: css, status: 200 };
-            } 
+            }
             return {
               body: await transform({ css, filePath }),
               status: 200,
@@ -77,10 +77,10 @@ export default function(eleventyConfig: UserConfig) {
                 'Content-Type': 'text/javascript',
               },
             };
+          }
           default:
-            return undefined
+            return undefined;
         }
-
       },
 
       '/assets/packages/@:scope/:pkg/:path*.js': async function({
@@ -90,7 +90,7 @@ export default function(eleventyConfig: UserConfig) {
           case 'rhx':
             switch (pkg) {
               case 'elements': return transformTypescriptSource(join(cwd, `${path}.ts`));
-              default:  return; 
+              default: return;
             }
           case 'uxdot':
             return transformTypescriptSource(join(cwd, 'uxdot', `${path}.ts`));

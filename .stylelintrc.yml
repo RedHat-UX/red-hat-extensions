@@ -8,8 +8,9 @@ plugins:
 
 ignoreFiles:
   - node_modules/**/*
-  - docs/assets/javascript/elements/*.js
-
+  - docs/javascript/elements/*.js
+  - uxdot/*.js
+  - elements/**/*.js
 rules:
   alpha-value-notation: number # TODO: fix for `percentage` in tokens
   color-hex-length: long

@@ -151,7 +151,7 @@ export default async function(eleventyConfig: UserConfig) {
       '@rhds/icons/ui/',
       '@patternfly/elements',
       '@patternfly/pfe-core',
-      
+
       // Vendor
       '@floating-ui/core',
       '@floating-ui/dom',
