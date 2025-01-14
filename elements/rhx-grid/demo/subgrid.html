@@ -1,25 +1,32 @@
-<rhx-grid columns="2xs:1 xs:2 sm:4 lg:6 xl:12">
-  <div>Grid Item 1</div>
-  <div>Grid Item 2</div>
-  <div>Grid Item 3</div>
-  <div>Grid Item 4</div>
-  <div>Grid Item 5</div>
-  <div>Grid Item 6</div>
-  <div>Grid Item 7</div>
-  <div>Grid Item 8</div>
-  <div>Grid Item 9</div>
-  <div>Grid Item 10</div>
-  <div>Grid Item 11</div>
-  <div>Grid Item 12</div>
-</rhx-grid>
+<div id="container">
+  <rhx-grid query="container">
+    <rhx-grid-item col-span="2xs:4">col-span="2xs:4"</rhx-grid-item>
+    <rhx-grid-item col-span="2xs:8">col-span="2xs:8"</rhx-grid-item>
+    <rhx-grid-item col-span="2xs:8 xl:6">
+      <rhx-grid-item col-span="2xs:8 sm:4 xl:3">col-span="2xs:8 sm:4 xl:3"</rhx-grid-item>
+      <rhx-grid-item col-span="2xs:8 sm:4 xl:1">col-span="2xs:8 sm:4 xl:1"</rhx-grid-item>
+      <rhx-grid-item col-span="2xs:8 sm:4 xl:1">col-span="2xs:8 sm:4 xl:1"</rhx-grid-item>
+      <rhx-grid-item col-span="2xs:8 sm:4 xl:1">col-span="2xs:8 sm:4 xl:1"</rhx-grid-item>
+      <rhx-grid-item col-span="2xs:8 sm:6 xl:4" col-start="sm:2">col-span="2xs:8 sm:6 xl:4" col-start="sm:2"</rhx-grid-item>
+    </rhx-grid-item>
+    <rhx-grid-item col-span="2xs:4 xl:6">col-span="2xs:4 xl:3"</rhx-grid-item>
+  </rhx-grid>
+</div>
 
 <link rel="stylesheet" href="../rhx-grid-lightdom.css">
 <script type="module">
   import '@rhx/elements/rhx-grid/rhx-grid.js';
 </script>
 
-
 <style>
+  #container {
+    display: block;
+    container-type: inline-size;
+    resize: horizontal;
+    overflow: auto;
+    padding-block-end: 32px;
+  }
+
   rhx-grid {
     background: var(--rh-color-surface-lighter, #f2f2f2);
   }
