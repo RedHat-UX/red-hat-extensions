@@ -1,0 +1,24 @@
+<rhx-grid style="--rhx-grid-columns: 2">
+  <div>Grid Item 1</div>
+  <div>Grid Item 2</div>
+  <div>Grid Item 3</div>
+  <div>Grid Item 4</div>
+</rhx-grid>
+
+
+<link rel="stylesheet" href="../rhx-grid-lightdom.css">
+<script type="module">
+  import '@rhx/elements/rhx-grid/rhx-grid.js';
+</script>
+
+
+<style>
+  rhx-grid {
+    background: var(--rh-color-surface-lighter, #f2f2f2);
+  }
+
+  rhx-grid > div,
+  rhx-grid-item {
+    border: var(--rh-border-width-sm, 1px) dashed var(--rh-color-border-subtle-on-light, #c7c7c7);
+  }
+</style>
