@@ -7,8 +7,8 @@ rhx-grid {
   grid-template-rows: repeat(var(--_rows), 1fr);
   grid-template-columns: repeat(var(--_columns), 1fr);
   gap:
-    var(--rhx-grid-column-gap, var(--rhx-grid-gap, var(--rh-space-2xl, 32px)))
-    var(--rhx-grid-row-gap, var(--rhx-grid-gap, var(--rh-space-2xl, 32px)));
+    var(--rhx-grid-column-gap, var(--rhx-grid-gap, var(--_col-gap, var(--rh-space-lg, 16px))))
+    var(--rhx-grid-row-gap, var(--rhx-grid-gap, var(--_row-gap, var(--rh-space-lg, 16px))));
   inline-size: 100%;
 
   &[query='container'] {
@@ -423,6 +423,9 @@ rhx-grid {
     }
 
     @container (min-width: 768px) {
+      --_col-gap: var(--rh-space-2xl, 32px);
+      --_row-gap: var(--rh-space-2xl, 32px);
+
       &[columns~='sm:1'] {
         --_columns: 1;
       }
@@ -1815,6 +1818,9 @@ rhx-grid {
     }
 
     @media (width >= 768px) {
+      --_col-gap: var(--rh-space-2xl, 32px);
+      --_row-gap: var(--rh-space-2xl, 32px);
+
       &[columns~='sm:1'] {
         --_columns: 1;
       }
