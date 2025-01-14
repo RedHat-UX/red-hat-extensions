@@ -3,8 +3,7 @@ import { customElement } from 'lit/decorators/custom-element.js';
 import { property } from 'lit/decorators/property.js';
 
 /**
- * Grid
- * @slot - Place element content here
+ * Grid Item
  */
 @customElement('rhx-grid-item')
 export class RhxGridItem extends LitElement {
@@ -14,6 +13,9 @@ export class RhxGridItem extends LitElement {
 
   @property({ reflect: true, attribute: 'row-span' }) rowSpan?: string;
 
+  /**
+   * Returns the node into which the element should render and by default creates and returns an open shadowRoot.  
+   **/
   createRenderRoot() {
     return this;
   }

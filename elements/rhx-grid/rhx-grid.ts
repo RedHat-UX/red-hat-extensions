@@ -6,7 +6,6 @@ import './rhx-grid-item.js';
 
 /**
  * Grid
- * @slot - Place element content here
  */
 @customElement('rhx-grid')
 export class RhxGrid extends LitElement {
