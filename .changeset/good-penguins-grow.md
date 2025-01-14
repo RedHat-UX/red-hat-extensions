@@ -4,7 +4,7 @@
 
 ✨ Added `<rhx-grid>`
 
-Twelve column based grid system based on standardized desing
+A responsive grid based off the Design Program Office (DPO) standardized design specifications. 
 
 ```html
 <rhx-grid columns="2xs:1 xs:2 sm:4 lg:6 xl:12">
