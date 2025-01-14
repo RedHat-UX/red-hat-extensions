@@ -1650,7 +1650,7 @@ rhx-grid {
       &[columns~='xs:8'] {
         --_columns: 8;
       }
-      
+ 
       &[columns~='xs:9'] {
         --_columns: 9;
       }
