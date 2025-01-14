@@ -5,9 +5,9 @@ import { property } from 'lit/decorators/property.js';
 import './rhx-grid-item.js';
 
 /**
- * A responsive grid based off the Design Program Office (DPO) standardized design specifications. 
+ * A responsive grid based off the Design Program Office (DPO) standardized design specifications.
  * @summary Responsive grid
- * 
+ *
  * @cssprop {<integer>} [--rhx-grid-columns=12] - number of columns
  * @cssprop {<integer>} [--rhx-grid-rows=1] - number of rows
  * @cssprop {<integer>} [--rhx-grid-column-gap=16] - value in px of spacing between columns
