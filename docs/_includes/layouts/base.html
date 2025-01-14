@@ -9,9 +9,6 @@
       {% if 'rh-' in tag %}
         {% set packageName = "rhds" %}
       {% endif %}
-      {% if 'rhx-grid' in tag %}
-        <link rel="stylesheet" href="/assets/packages/@{{packageName}}/elements/elements/{{tag}}/{{tag}}-container-lightdom.css">
-      {% endif %}
       <link rel="stylesheet" href="/assets/packages/@{{packageName}}/elements/elements/{{tag}}/{{tag}}-lightdom.css">
     {% endfor %}
 

@@ -1,24 +1,23 @@
-<rhx-grid style="--rhx-grid-columns: 2">
-  <div>Grid Item 1</div>
-  <div>Grid Item 2</div>
-  <div>Grid Item 3</div>
-  <div>Grid Item 4</div>
+<rhx-grid style="--rhx-grid-columns: 12">
+  <div data-item="1">Grid Item 1</div>
+  <div data-item="2">Grid Item 2</div>
+  <div data-item="3">Grid Item 3</div>
+  <div data-item="4">Grid Item 4</div>
 </rhx-grid>
+
+
+<form>
+  <label>--rhx-grid-columns: <input type="number" min="1" max="12" name="columns" value="12"></label>
+  <label>--rhx-grid-rows: <input type="number" min="1" max="12" name="rows" value="1"><label>
+  <label>--rhx-grid-gap: <input type="number" min="16" max="64" name="gap" value="16"><label>
+  <label>--rhx-grid-column-gap: <input type="number" min="16" max="64" name="col-gap" value="16"></label>
+  <label>--rhx-grid-row-gap: <input type="number" min="16" max="64" name="row-gap" value="16"></label>
+  <button>Add Grid Item</button>
+  <button>Add Grid Row</button>
+</form>
 
 
 <link rel="stylesheet" href="../rhx-grid-lightdom.css">
 <script type="module">
   import '@rhx/elements/rhx-grid/rhx-grid.js';
 </script>
-
-
-<style>
-  rhx-grid {
-    background: var(--rh-color-surface-lighter, #f2f2f2);
-  }
-
-  rhx-grid > div,
-  rhx-grid-item {
-    border: var(--rh-border-width-sm, 1px) dashed var(--rh-color-border-subtle-on-light, #c7c7c7);
-  }
-</style>
