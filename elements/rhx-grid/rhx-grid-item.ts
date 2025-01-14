@@ -14,7 +14,8 @@ export class RhxGridItem extends LitElement {
   @property({ reflect: true, attribute: 'row-span' }) rowSpan?: string;
 
   /**
-   * Returns the node into which the element should render and by default creates and returns an open shadowRoot.  
+   * Returns the node into which the element should render and by 
+   * default creates and returns an open shadowRoot.
    **/
   createRenderRoot() {
     return this;
