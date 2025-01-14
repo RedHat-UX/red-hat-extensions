@@ -18,7 +18,7 @@ export default class Feedback extends Renderer<Data> {
       </script>
       <uxdot-feedback>
         <h2>Other libraries</h2>
-        <p>To learn more about our other libraries, visit the <a href="https://ux.redhat.com/get-started/">getting started page</a>.</p>
+        <p>To learn more about our other libraries, visit the Red Hat Design System: <a href="https://ux.redhat.com/get-started/">Getting Started</a>.</p>
       </uxdot-feedback>
     `).replaceAll('\n+', '\n');
   }
