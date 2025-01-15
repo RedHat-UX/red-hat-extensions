@@ -1,10 +1,9 @@
 /* RhxGrid Demo styles */
 [data-demo='rhx-grid'] {
-
   rh-alert {
     margin-block-end: var(--rh-space-2xl, 32px);
   }
-  
+
   #container:has(rhx-grid) {
     display: block;
     container-type: inline-size;
