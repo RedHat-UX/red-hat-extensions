@@ -10,7 +10,7 @@
     "description": "Red Hat Extensions",
     "componentSubpath": "elements",
     "stylesheets": [
-      "/dev-server/styles.css"
+      "/docs/styles/demo/dev-server.css"
     ]
   }
 }

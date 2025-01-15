@@ -4,12 +4,14 @@
   tokens,
   typography,
   base,
-  layout;
+  layout,
+  rhx-grid;
 
 @import url('../reset.css') layer(reset);
 @import url('../fonts.css') layer(fonts);
 @import url('/node_modules/@rhds/tokens/css/global.css') layer(tokens);
 @import url('../typography.css') layer(typography);
+@import url('extras/rhx-grid-extras.css') layer(rhx-grid);
 
 @layer base {
   /**

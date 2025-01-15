@@ -2,58 +2,18 @@
   reset,
   fonts,
   tokens,
-  typography;
+  typography,
+  rhx-grid;
 
 @import url('../reset.css') layer(reset);
 @import url('../fonts.css') layer(fonts);
 @import url('/assets/packages/@rhds/tokens/css/global.css') layer(tokens);
 @import url('../typography.css') layer(typography);
 
+@import url('extras/rhx-grid-extras.css') layer(rhx-grid);
+
 html,
 body,
 main {
   height: 100%;
-}
-
-/* RhxGrid Demo styles */
-#container:has(rhx-grid) {
-  display: block;
-  container-type: inline-size;
-  resize: horizontal;
-  overflow: auto;
-  padding-block-end: 32px;
-}
-
-rhx-grid {
-  background: var(--rh-color-surface-lighter, #f2f2f2);
-}
-
-rhx-grid > div,
-rhx-grid-item {
-  border: var(--rh-border-width-sm, 1px) dashed var(--rh-color-border-subtle-on-light, #c7c7c7);
-
-  &[row-span='2xs:2'][col-span='2xs:3'],
-  &[row-span='2xs:3'][col-span='2xs:3'] {
-    --_background-color: var(--rh-color-interactive-primary-visited-default-on-light, #5e40be);
-
-    background:
-      repeating-linear-gradient(45deg,
-        oklch(from var(--_background-color) l c h / calc(alpha - 0.075)),
-        oklch(from var(--_background-color) l c h / calc(alpha - 0.075)) 10px,
-        var(--_background-color) 10px,
-        var(--_background-color) 20px);
-    color: white;
-  }
-
-  &:has(rhx-grid-item) {
-    --_background-color: var(--rh-color-interactive-primary-visited-default-on-light, #5e40be);
-
-    background:
-      repeating-linear-gradient(45deg,
-        oklch(from var(--_background-color) l c h / calc(alpha - 0.075)),
-        oklch(from var(--_background-color) l c h / calc(alpha - 0.075)) 10px,
-        var(--_background-color) 10px,
-        var(--_background-color) 20px);
-    color: white;
-  }
 }

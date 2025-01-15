@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/max-len */
 // @ts-check
 import { pfeDevServerConfig } from '@patternfly/pfe-tools/dev-server/config.js';
 import { glob } from 'node:fs/promises';
@@ -55,13 +56,29 @@ function injectManuallyResolvedModulesToImportMap(document) {
       'lit/': '/node_modules/lit/',
       '@patternfly/pfe-core': '/node_modules/@patternfly/pfe-core/core.js',
       '@patternfly/pfe-core/': '/node_modules/@patternfly/pfe-core/',
-      '@rhds/elements/': '/node_modules/@rhds/elements/elements/',
       '@rhds/elements/lib/': '/node_modules/@rhds/elements/lib/',
+      '@rhds/elements/': '/node_modules/@rhds/elements/elements/',
       '@rhds/icons/': '/node_modules/@rhds/icons/',
       '@rhds/tokens/': '/node_modules/@rhds/tokens/js/',
       '@rhds/tokens/css/': '/node_modules/@rhds/tokens/css/',
       '@floating-ui/dom': '/node_modules/@floating-ui/dom/dist/floating-ui.dom.browser.min.mjs',
       '@floating-ui/core': '/node_modules/@floating-ui/core/dist/floating-ui.core.browser.min.mjs',
+    });
+    /* Overriding scopes here due to an issue with incorrect pathing to @rhds/elements/lib/ */
+    Object.assign(json.scopes, {
+      '/': {
+        '@lit/reactive-element': '/node_modules/@lit/reactive-element/development/reactive-element.js',
+        '@lit/reactive-element/decorators/': '/node_modules/@lit/reactive-element/development/decorators/',
+        '@patternfly/': '/node_modules/@patternfly/',
+        'lit': '/node_modules/lit/index.js',
+        'lit-element/lit-element.js': '/node_modules/lit-element/development/lit-element.js',
+        'lit-html': '/node_modules/lit-html/development/lit-html.js',
+        'lit-html/': '/node_modules/lit-html/development/',
+        'lit/': '/node_modules/lit/',
+        'tslib': '/node_modules/tslib/tslib.es6.mjs',
+        '@rhds/elements/lib/': '/node_modules/@rhds/elements/lib/',
+        '@rhds/elements/': '/node_modules/@rhds/elements/elements/',
+      },
     });
     setTextContent(importMapNode, JSON.stringify(json, null, 2));
   }
