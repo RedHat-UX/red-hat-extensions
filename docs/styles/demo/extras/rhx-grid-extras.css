@@ -1,4 +1,5 @@
 /* RhxGrid Demo styles */
+main,
 [data-demo='rhx-grid'] {
   rh-alert {
     margin-block-end: var(--rh-space-2xl, 32px);
