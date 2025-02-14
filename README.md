@@ -1,6 +1,6 @@
 # Red Hat Extensions
 
-Experimental, and extension elements based off Red Hat Design System principles and tooling.
+Experimental extension elements based off of Red Hat Design System principles and tooling.
 
 ## Contributing to RHx
 
