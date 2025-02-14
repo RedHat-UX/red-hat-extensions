@@ -15,8 +15,17 @@ import './rhx-grid-item.js';
  */
 @customElement('rhx-grid')
 export class RhxGrid extends LitElement {
+  /*
+  * Change the number of columns per breakpoint
+  * https://ux.redhat.com/tokens/breakpoint/
+  */
   @property({ reflect: true }) columns?: string;
 
+  /*
+  * Container query or media query based grid
+  * Note: container based queries require a ancestor parent element that is a CSS `container`
+  * https://developer.mozilla.org/en-US/docs/Web/CSS/container
+  */
   @property({ reflect: true }) query?: 'media' | 'container' | null = null;
 
   /**
