@@ -4,25 +4,48 @@ node_modules
 .rollup.cache
 .cache
 
-# Ignore compiled files in webroot
-_site
-docs/pfe.min*
-docs/assets/playgrounds/
 
 # Build artifacts
+elements.js
 elements/*/*.js
 elements/*/test/*.js
-lib/**/*.js
 !elements/**/demo/*.css
+uxdot/*.js
+react
+lib/**/*.js
+*.tsbuildinfo
 *.map
 *.d.ts
 !declaration.d.ts
-*.tsbuildinfo
 custom-elements.json
 test-results.xml
 rhds.min.js
 *LEGAL.txt
 *.tgz
+# copied lightdom shims
+rhx-*/rhx-*lightdom.css
+rhx-*/rhx-*lightdom-shim.css
+
+# Ignore compiled files in webroot
+_site
+docs/pfe.min*
+docs/assets/playgrounds/
+docs/assets/javascript/elements/**/*.js.map
+docs/assets/javascript/elements/**/*.d.ts
+docs/assets/javascript/elements/**/*.js
+docs/_plugins/**/*.js
+docs/_includes/**/*.js
+docs/_data/playgrounds.json
+docs/_data/*.js
+docs/assets/javascript/elements/playground-elements.js
+docs/assets/javascript/elements/assets/playground-typescript-worker-*.js
+docs/assets/javascript/environment.js
+!docs/11ty-types.d.ts
+!docs/_plugins/lit-ssr/worker/*.js
+
+# scripts
+!scripts/environment.d.ts
+
 
 # e2e
 test-results
@@ -94,5 +117,3 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-!declaration.d.ts
-docs/assets/playgrounds/rh-playground.js

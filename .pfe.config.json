@@ -1,16 +1,16 @@
 {
-  "demoURLPrefix": "https://ux.redhat.com/",
+  "demoURLPrefix": "https://rhds-extensions.netlify.app/",
   "sourceControlURLPrefix": "https://github.com/redhat-ux/red-hat-extra/tree/main/",
   "tagPrefix": "rhx",
   "aliases": {},
   "site": {
-    "title": "Red Hat Extra",
+    "title": "Red Hat Extensions",
     "logoUrl": "/dev-server/logo-red-hat.svg",
     "favicon": "/dev-server/logo-red-hat.svg",
-    "description": "Red Hat Extra",
+    "description": "Red Hat Extensions",
     "componentSubpath": "elements",
     "stylesheets": [
-      "/dev-server/styles.css"
+      "/docs/styles/demo/dev-server.css"
     ]
   }
 }

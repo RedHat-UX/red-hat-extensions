@@ -1,0 +1,12 @@
+---
+layout: layouts/base.html
+importStyles:
+  - 'pages/backpage'
+---
+
+<article>
+  {% include "../../partials/_header.html" %}
+  <div class="container">
+    {{ content | safe }}
+  </div>
+</article>

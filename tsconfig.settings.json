@@ -1,0 +1,64 @@
+{
+  "exclude": [
+    "**/node_modules/**/*",
+    "./*.config.js",
+    "./elements/**/*.e2e.ts",
+    "./elements/**/*.js",
+    "./elements/**/*.spec.ts",
+    "./lib/**/*.js",
+    "_site",
+    "scripts/*.js"
+  ],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "declaration": true,
+    "downlevelIteration": true,
+    "emitDeclarationOnly": false,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "incremental": true,
+    "inlineSources": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "verbatimModuleSyntax": true,
+    "noEmitOnError": false,
+    "rootDir": ".",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2020",
+    "skipLibCheck": true,
+    "useDefineForClassFields": false,
+    "plugins": [
+      {
+        "transform": "@lit/ts-transformers",
+        "import": "idiomaticDecoratorsTransformer"
+      },
+      {
+        "transform": "typescript-transform-lit-css",
+        "inline": true,
+        "cssnano": true
+      },
+      {
+        "name": "typescript-lit-html-plugin"
+      },
+      {
+        "name": "ts-lit-plugin"
+      }
+    ],
+    "lib": [
+      "DOM.iterable",
+      "DOM",
+      "ES5",
+      "ES6",
+      "ES2020",
+      "ES2022",
+      "ES2015.Generator",
+      "ESNext.Collection",
+      "ESNext.Array",
+      "ESNext.AsyncIterable",
+      "ESNext.Disposable",
+      "ScriptHost"
+    ]
+  }
+}

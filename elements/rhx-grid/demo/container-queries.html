@@ -1,0 +1,29 @@
+<rh-alert state="info">
+  <h2 slot="header">NOTE: Grid must be placed inside a parent with a CSS rule of `container-type: inline-size;`</h2>
+  <p>The container below is resizable, drag the bottom right corner to see the grid adjust</p>
+</rh-alert>
+
+
+<div id="container">
+  <rhx-grid query="container" columns="2xs:1 xs:2 sm:4 lg:6 xl:12">
+    <div>Grid Item 1</div>
+    <div>Grid Item 2</div>
+    <div>Grid Item 3</div>
+    <div>Grid Item 4</div>
+    <div>Grid Item 5</div>
+    <div>Grid Item 6</div>
+    <div>Grid Item 7</div>
+    <div>Grid Item 8</div>
+    <div>Grid Item 9</div>
+    <div>Grid Item 10</div>
+    <div>Grid Item 11</div>
+    <div>Grid Item 12</div>
+  </rhx-grid>
+</div>
+
+<link rel="stylesheet" href="../rhx-grid-lightdom.css">
+
+<script type="module">
+  import '@rhx/elements/rhx-grid/rhx-grid.js';
+  import '@rhds/elements/rh-alert/rh-alert.js';
+</script>
