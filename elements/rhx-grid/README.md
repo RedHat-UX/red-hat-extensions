@@ -36,7 +36,7 @@ Display 4 of 12, each element will auto span 3
 
 ### Column breakpoints
 
-One column row at 0 - 576px `2xs` 
+One column row at (max-width: 575px) `2xs` 
 Two columns row at (min-width: 576px) `xs` breakpoint
 Four columns row at (min-width: 768px) `md` breakpoint
 
