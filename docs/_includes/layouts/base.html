@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include "../partials/_meta.html" %}
+
+    {# load lightdomcss #}
+    {% for tag in importLightDomCss %}
+      {% set packageName = "rhx" %}
+      {% if 'rh-' in tag %}
+        {% set packageName = "rhds" %}
+      {% endif %}
+      <link rel="stylesheet" href="/assets/packages/@{{packageName}}/elements/elements/{{tag}}/{{tag}}-lightdom.css">
+    {% endfor %}
+
+    {% include "../partials/_javascript.html" %}
+
+   {# On browsers that don't yet support native declarative shadow DOM, a
+      paint can occur after some or all pre-rendered HTML has been parsed,
+      but before the declarative shadow DOM polyfill has taken effect. This
+      paint is undesirable because it won't include any component shadow DOM.
+      To prevent layout shifts that can result from this render, we use a
+      "dsd-pending" attribute to ensure we only paint after we know
+      shadow DOM is active. #}
+    <style>
+      body[dsd-pending] {
+        display: none;
+      }
+    </style>
+    {# if javascript is turned off we want to ensure the page renders #}
+    <noscript>
+      <style type="text/css">
+        body[dsd-pending] {
+          display: grid;
+        }
+      </style>
+    </noscript>
+
+    <link rel="stylesheet" href="/styles/styles.css">
+
+    {# load pagestyles #}
+    {% for path in importStyles %}
+      <link rel="stylesheet" href="/styles/{{path}}.css">
+    {% endfor %}
+
+  </head>
+  <body>
+    {% include "../partials/_masthead.html" %}
+
+    {% include "../partials/_sidenav.html" %}
+
+    <rh-surface id="main" color-palette="lightest" role="main">
+      {{ content | safe }}
+    </rh-surface>
+
+    {% include "../partials/_footer.html" %}
+  </body>
+</html>

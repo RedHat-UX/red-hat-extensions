@@ -10,7 +10,7 @@ const syntaxes = new Map(Object.entries({
   shadow: '<shadow>',
 }));
 
-/** @return {decl is import('custom-elements-manifest').CustomElementDeclaration} */
+/** @returns {decl is import('custom-elements-manifest').CustomElementDeclaration} */
 const isCustomElementDeclaration = decl => decl.customElement;
 
 /** file to modify */

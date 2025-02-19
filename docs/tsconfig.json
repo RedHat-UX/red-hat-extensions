@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "../tsconfig.settings.json"
+  ],
+  "include": [
+    "./**/*",
+    "../declaration.d.ts",
+    "../eleventy.config.ts",
+    "./11ty-types.d.ts"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "noEmit": true
+  }
+}

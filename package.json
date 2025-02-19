@@ -6,9 +6,17 @@
   "license": "MIT",
   "customElements": "custom-elements.json",
   "exports": {
-    ".": "./rhx.min.js",
+    ".": "./elements.js",
     "./lib/*": "./lib/*",
+    "./react/*": "./react/*",
     "./*": "./elements/*"
+  },
+  "imports": {
+    "#scripts/*": "./scripts/*",
+    "#uxdot/*": "./uxdot/*",
+    "#11ty-plugins/*": "./docs/_plugins/*",
+    "#11ty-data/*": "./docs/_data/*",
+    "#eleventy.config": "./eleventy.config.ts"
   },
   "contributors": [
     "Benny Powers <bennyp@redhat.com>",
@@ -79,60 +87,85 @@
       "service": true,
       "command": "web-dev-server --open --watch",
       "dependencies": [
-        "compile",
-        "watch:compile",
-        "watch:docs"
+        "patch",
+        "analyze",
+        "11ty-dev"
+      ]
+    },
+    "11ty-dev": {
+      "service": true,
+      "command": "NODE_OPTIONS='--import tsx/esm' eleventy --serve --incremental --config=eleventy.config.ts",
+      "dependencies": [
+        "analyze"
       ]
     },
     "dev": {
       "service": true,
       "command": "web-dev-server --watch",
       "dependencies": [
-        "analyze",
-        "compile",
-        "watch:compile"
+        "patch",
+        "analyze"
       ]
     },
     "serve": {
       "service": true,
-      "command": "eleventy --serve",
+      "command": "TSX_TSCONFIG_PATH=tsconfig.settings.json NODE_OPTIONS='--import tsx/esm' eleventy --config=eleventy.config.ts --serve --incremental",
       "dependencies": [
-        "analyze",
-        "compile",
-        "watch:compile"
+        "patch",
+        "analyze"
       ]
     },
     "build": {
       "dependencies": [
         "patch",
         "analyze",
-        "compile",
-        "bundle",
-        "docs"
+        "entrypoint",
+        "compile"
+      ]
+    },
+    "build:test": {
+      "dependencies": [
+        "patch",
+        "analyze",
+        "compile"
       ]
     },
     "test": {
       "command": "wtr --group default",
       "dependencies": [
-        "build"
+        "build:test"
       ]
     },
     "compile": {
-      "command": "ttsc",
+      "command": "tspc -b",
       "files": [
         "elements/**/*.ts",
+        "uxdot/*.ts",
+        "uxdot/*.css",
         "lib/**/*.css",
         "lib/**/*.ts"
       ],
       "output": [
         "tsconfig.tsbuildinfo",
-        "elements/**/*.{d.ts,js,map}",
-        "lib/**/*.{d.ts,js,map}",
+        "elements/**/*.{d.ts,js,map,tsbuildinfo}",
+        "lib/**/*.{d.ts,js,map,tsbuildinfo}",
+        "elements/rh-secondary-nav/test/fixtures.js",
+        "uxdot/*.{js,d.ts,map,tsbuildinfo}",
         "!elements/*/{demo,test}/**/*.js"
       ]
     },
-    "bundle": {
-      "command": "node scripts/bundle.js"
+    "entrypoint": {
+      "command": "npx tsx scripts/generate-entry-point.ts",
+      "dependencies": [
+        "analyze"
+      ],
+      "files": [
+        "custom-elements.json",
+        "scripts/generate-entry-point.ts"
+      ],
+      "output": [
+        "elements.js"
+      ]
     },
     "analyze": {
       "command": "cem analyze && node scripts/cem-tokens.js && node scripts/system-tokens.js",
@@ -147,12 +180,10 @@
       ]
     },
     "docs": {
-      "command": "eleventy",
+      "command": "TSX_TSCONFIG_PATH=tsconfig.settings.json NODE_OPTIONS='--import tsx/esm' eleventy --config=eleventy.config.ts",
       "dependencies": [
         "patch",
-        "analyze",
-        "compile",
-        "bundle"
+        "analyze"
       ],
       "files": [
         "docs"
@@ -177,10 +208,11 @@
       ]
     },
     "stylelint": {
-      "command": "stylelint 'elements/**/*.css' 'lib/**/*.css' 'docs/**/*.scss'",
+      "command": "stylelint 'elements/**/*.css' 'lib/**/*.css' 'docs/**/*.scss' 'docs/**/*.css' 'uxdot/**/*.css'",
       "files": [
         "docs/**/*.scss",
         "elements/**/*.css",
+        "uxdot/**/*.css",
         "lib/**/*.css"
       ]
     },
@@ -190,18 +222,6 @@
         "docs/**/*.md",
         "elements/**/*.md",
         "README.md"
-      ]
-    },
-    "watch:compile": {
-      "service": true,
-      "command": "ttsc --watch"
-    },
-    "watch:docs": {
-      "service": true,
-      "command": "eleventy --serve --incremental",
-      "dependencies": [
-        "analyze",
-        "compile"
       ]
     },
     "e2e": {
@@ -217,58 +237,81 @@
     }
   },
   "dependencies": {
-    "@patternfly/elements": "^2.4.0",
-    "@patternfly/icons": "^1.0.2",
-    "@rhds/tokens": "^2.0.1",
-    "lit": "^2.7.3",
-    "tslib": "^2.5.0"
+    "@jspm/generator": "^2.3.1",
+    "@lit/context": "^1.1.2",
+    "@patternfly/pfe-core": "^4.0.4",
+    "@rhds/elements": "^2.1.1",
+    "@rhds/icons": "^1.1.2",
+    "@rhds/tokens": "^2.1.1",
+    "lit": "^3.2.1",
+    "tslib": "^2.7.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-img": "^3.1.0",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@commitlint/cli": "^17.4.4",
-    "@commitlint/config-conventional": "^17.4.4",
-    "@jspm/generator": "^1.1.7",
-    "@lit/reactive-element": "^1.6.1",
-    "@parse5/tools": "^0.3.0",
-    "@patternfly/create-element": "^1.0.1",
-    "@patternfly/eslint-config-elements": "^2.0.1",
-    "@patternfly/eslint-plugin-elements": "^1.1.0",
-    "@patternfly/pfe-tools": "^1.5.0",
-    "@playwright/test": "^1.31.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-typescript": "^11.1.5",
-    "@types/mocha": "^10.0.0",
-    "@web/rollup-plugin-import-meta-assets": "^2.1.0",
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-fetch": "^4.0.1",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@lit-labs/eleventy-plugin-lit": "^1.0.3",
+    "@lit/reactive-element": "^2.0.4",
+    "@lit/ts-transformers": "^2.0.1",
+    "@parse5/tools": "^0.5.0",
+    "@patternfly/create-element": "^1.0.3",
+    "@patternfly/elements": "^4.0.2",
+    "@patternfly/eslint-config-elements": "^4.0.0",
+    "@patternfly/eslint-plugin-elements": "^2.0.0",
+    "@patternfly/icons": "^1.0.3",
+    "@patternfly/pfe-tools": "^4.0.1",
+    "@playwright/test": "^1.48.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@stylistic/eslint-plugin-js": "2.9.0",
+    "@stylistic/stylelint-config": "^2.0.0",
+    "@stylistic/stylelint-plugin": "^3.1.1",
+    "@types/js-yaml": "^4.0.9",
+    "@types/markdown-it-attrs": "^4.1.3",
+    "@types/markdown-it-footnote": "^3.0.4",
+    "@types/mocha": "^10.0.9",
+    "@types/tinycolor2": "^1.4.6",
+    "@web/rollup-plugin-import-meta-assets": "^2.2.1",
+    "@webcomponents/template-shadowroot": "^0.2.1",
     "async-csv": "^2.1.3",
-    "autoprefixer": "^10.4.14",
-    "cssnano": "^5.1.15",
-    "custom-elements-manifest": "^2.0.0",
-    "element-internals-polyfill": "^1.3.0",
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
+    "custom-elements-manifest": "^2.1.0",
+    "element-internals-polyfill": "^1.3.12",
     "eleventy-plugin-dart-sass": "^1.0.3",
+    "eleventy-plugin-helmet": "^0.2.2",
     "eleventy-plugin-nesting-toc": "^1.3.0",
-    "esbuild": "^0.17.18",
-    "fuse.js": "^6.6.2",
+    "es-module-shims": "^1.10.0",
+    "eslint": "^9.12.0",
+    "fuse.js": "^7.0.0",
     "git-branch": "^2.0.1",
-    "glob": "^9.3.1",
-    "image-size": "^1.0.2",
-    "leasot": "^13.3.0",
-    "markdown-it-anchor": "^8.6.7",
-    "markdown-it-attrs": "^4.1.6",
-    "markdownlint-cli2": "^0.8.1",
-    "parse5": "^7.1.2",
-    "playground-elements": "^0.18.1",
-    "postcss-pxtorem": "^6.0.0",
-    "renamer": "^4.0.0",
-    "sinon": "^15.0.4",
-    "spandx": "^2.2.5",
-    "stylelint": "^15.10.0",
-    "stylelint-config-standard": "^31.0.0",
-    "stylelint-config-standard-scss": "^7.0.1",
-    "stylelint-stylistic": "^0.4.3",
-    "ttypescript": "^1.5.15",
-    "typescript": "^4.9.5",
-    "wireit": "^0.9.5"
+    "image-size": "^1.1.1",
+    "leasot": "^14.4.0",
+    "lit-html": "^3.2.1",
+    "markdown-it-attrs": "^4.2.0",
+    "markdown-it-footnote": "^4.0.0",
+    "markdownlint-cli2": "^0.14.0",
+    "parse5": "^7.2.0",
+    "patch-package": "^8.0.0",
+    "piscina": "^4.7.0",
+    "postcss-pxtorem": "^6.1.0",
+    "query-selector-shadow-dom": "^1.0.1",
+    "renamer": "^5.0.2",
+    "spandx": "^3.0.0",
+    "stylelint-config-standard": "^36.0.1",
+    "tinycolor2": "^1.6.0",
+    "ts-blank-space": "^0.4.1",
+    "ts-patch": "^3.2.1",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3",
+    "typescript-transform-lit-css": "^2.0.0",
+    "web-dev-server-plugin-lit-css": "^3.0.1",
+    "wireit": "^0.14.9"
+  },
+  "optionalDependencies": {
+    "@esbuild/darwin-arm64": "^0.15.18",
+    "@esbuild/linux-x64": "^0.23.1",
+    "@rollup/rollup-darwin-x64": "4.14.2"
   }
 }

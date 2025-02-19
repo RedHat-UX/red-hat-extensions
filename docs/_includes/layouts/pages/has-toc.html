@@ -1,0 +1,33 @@
+---
+layout: layouts/base.html
+---
+{%- set tagsForThisPageToc = tocTags or ['h2'] -%}
+{%- set table = content | toc(tags=tagsForThisPageToc) -%}
+
+<link rel="stylesheet"
+      href="/styles/pages/backpage.css"
+      data-helmet>
+
+<link rel="stylesheet"
+      href="/assets/packages/@uxdot/elements/uxdot-toc-lightdom.css"
+      data-helmet>
+
+<script type="module" data-helmet>
+  import '@uxdot/elements/uxdot-toc.js';
+</script>
+
+<article class="has-toc">
+  {% include 'partials/_header.html' %}
+  {% if table.length > 0 %}
+  <div class="aside">
+    <uxdot-toc summary="On this page">
+      {{ table | safe }}
+    </uxdot-toc>
+  </div>
+  {% endif %}
+  <div class="container">
+    {{ content | safe }}
+    {% include "partials/_edit-this-page.html" %}
+  </div>
+</article>
+{% include "partials/_back-to-top.html" %}
