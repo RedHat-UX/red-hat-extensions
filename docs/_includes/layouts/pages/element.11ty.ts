@@ -99,7 +99,7 @@ export default class ElementsPage extends Renderer<Context> {
 
       ${planned ? '' : html`
       <script type="module" data-helmet>
-        import '@rhx/elements/${tagName}/${tagName}.js';
+        import '@rhdx/elements/${tagName}/${tagName}.js';
       </script>`}
 
       ${isOverviewPage ? await this.#renderOverviewPage(content, ctx)

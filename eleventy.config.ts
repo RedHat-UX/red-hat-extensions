@@ -119,7 +119,7 @@ export default async function(eleventyConfig: UserConfig) {
         '@rhds/elements/': '/assets/packages/@rhds/elements/elements/',
         '@rhds/icons/': '/assets/packages/@rhds/icons/',
         '@rhds/icons/icons.js': '/assets/packages/@rhds/icons/icons.js',
-        '@rhx/elements/': '/assets/packages/@rhx/elements/elements/',
+        '@rhdx/elements/': '/assets/packages/@rhdx/elements/elements/',
         '@patternfly/elements/': '/assets/packages/@patternfly/elements/',
         '@patternfly/icons/': '/assets/packages/@patternfly/icons/',
         '@patternfly/pfe-core/': '/assets/packages/@patternfly/pfe-core/',

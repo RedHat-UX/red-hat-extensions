@@ -28,7 +28,7 @@ register('./lit-css-node.ts', import.meta.url);
 
 async function importModule(bareSpec: string) {
   const spec = pathToFileURL(resolve(process.cwd(), bareSpec)).href;
-  if (spec.search(/@uxdot|@rhx/)) {
+  if (spec.search(/@uxdot|@rhdx/)) {
     spec.replace('.js', '.ts');
   }
   await import(spec);

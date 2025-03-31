@@ -1,6 +1,6 @@
 import { expect, html } from '@open-wc/testing';
 import { createFixture } from '@patternfly/pfe-tools/test/create-fixture.js';
-import { RhxGrid } from '@rhx/elements/rhx-grid/rhx-grid.js';
+import { RhxGrid } from '@rhdx/elements/rhx-grid/rhx-grid.js';
 
 describe('<rhx-grid>', function() {
   describe('simply instantiating', function() {
