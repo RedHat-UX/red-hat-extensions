@@ -61,7 +61,7 @@ export default function(eleventyConfig: UserConfig) {
             const [, path] = match.match(LIGHTDOM_PATH_RE) ?? [];
             const { pathname } = new URL(path, `file:///${outputPath}`);
             const filename = pathname.split('/').pop();
-            const replacement = `/assets/packages/@rhx/elements/elements/${prefixedTagName}/${filename}`;
+            const replacement = `/assets/packages/@rhdx/elements/elements/${prefixedTagName}/${filename}`;
             content = content.replace(`.${path}`, replacement);
           }
         }

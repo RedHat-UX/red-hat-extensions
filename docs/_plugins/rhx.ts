@@ -161,11 +161,11 @@ export default async function(eleventyConfig: UserConfig, options?: Options) {
     switch (runMode) {
       case 'build':
         await $`npx tspc -b elements`;
-        await mkdir(join(pkgsDir, '@rhx/elements/elements'), { recursive: true });
-        await mkdir(join(pkgsDir, '@rhx/elements/lib'), { recursive: true });
+        await mkdir(join(pkgsDir, '@rhdx/elements/elements'), { recursive: true });
+        await mkdir(join(pkgsDir, '@rhdx/elements/lib'), { recursive: true });
         for await (const file of glob('./{elements,lib}/**/*.{js,d.ts,map,css}')) {
           const rel = relative(cwd, file);
-          const outDir = join(pkgsDir, '@rhx/elements');
+          const outDir = join(pkgsDir, '@rhdx/elements');
           const out = join(outDir, dirname(rel));
           const from = join(cwd, rel);
           const to = join(outDir, rel);
