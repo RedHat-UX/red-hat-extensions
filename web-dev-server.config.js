@@ -29,7 +29,7 @@ async function resolveLocal(pattern, relativeTo = './') {
   for await (const file of glob(pattern, { cwd: join(process.cwd(), relativeTo) })) {
     if (!TEST_RE.test(file)) {
       files.push([
-        `@rhx/elements/${file.replace('.ts', '.js')}`,
+        `@rhdx/elements/${file.replace('.ts', '.js')}`,
         join(relativeTo, file).replace('./', '/'),
       ]);
     }

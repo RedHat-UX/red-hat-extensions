@@ -5,7 +5,7 @@ const isCustomElementExport = (exp: Export): exp is CustomElementExport =>
   exp.kind === 'custom-element-definition';
 
 const makeExportStatement = (ex: Export) =>
-  `export * from '${ex.declaration.package ?? '@rhx/elements'}/${ex.declaration?.module}';`;
+  `export * from '${ex.declaration.package ?? '@rhdx/elements'}/${ex.declaration?.module}';`;
 
 const manifestUrl = new URL('../custom-elements.json', import.meta.url);
 const manifest: Package = JSON.parse(await readFile(manifestUrl, 'utf8'));

@@ -68,7 +68,7 @@ export default class ElementsPage extends Renderer<Context> {
     const stylesheets = [
       '/assets/packages/@rhds/elements/elements/rh-table/rh-table-lightdom.css',
       '/styles/samp.css',
-      ctx.doc.hasLightdom && `/assets/packages/@rhx/elements/elements/${tagName}/${tagName}-lightdom.css`,
+      ctx.doc.hasLightdom && `/assets/packages/@rhdx/elements/elements/${tagName}/${tagName}-lightdom.css`,
       isCodePage && '/styles/pages/code.css',
     ].filter(Boolean);
 
@@ -99,7 +99,7 @@ export default class ElementsPage extends Renderer<Context> {
 
       ${planned ? '' : html`
       <script type="module" data-helmet>
-        import '@rhx/elements/${tagName}/${tagName}.js';
+        import '@rhdx/elements/${tagName}/${tagName}.js';
       </script>`}
 
       ${isOverviewPage ? await this.#renderOverviewPage(content, ctx)
