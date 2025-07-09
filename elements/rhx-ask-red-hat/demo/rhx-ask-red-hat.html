@@ -1,0 +1,22 @@
+<strong>Note this element will not display when unauthenticated.</strong>
+
+<rhx-ask-red-hat></rhx-ask-red-hat>
+
+<script type="module">
+  import '@rhdx/elements/rhx-ask-red-hat/rhx-ask-red-hat.js';
+
+  const rhxAsk = document.querySelector('rhx-ask-red-hat');
+  await rhxAsk.updateComplete;
+
+  // Set healthCheckEndpoint & hydraEndpoint
+  rhxAsk.healthCheckEndpoint = 'http://access.redhat.com/api/ask/v1/health';
+  rhxAsk.hydraEndpoint = 'https://access.redhat.com/hydra/rest/contacts/sso/current';
+
+  /** Pseudo user auth
+  * if (user.session.isAuthenticated()) {
+  *   // get values session pass them to rhxAsk
+  *   rhxAsk.authToken = user.session.getToken();
+  *   rhxAsk.userId = user.session.getUserId();
+  * }
+  */
+</script>
