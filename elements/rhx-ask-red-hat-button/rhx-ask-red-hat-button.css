@@ -17,7 +17,7 @@ rh-icon {
   color: light-dark(var(--rh-color-purple-60, #3d2785), var(--rh-color-purple-20, #d0c5f4));
 }
 
-a {
+button {
   display: flex;
   gap: var(--rh-space-md, 8px);
   align-items: center;
@@ -34,7 +34,7 @@ a {
   text-decoration: none;
 }
 
-a:before {
+button:before {
   content: '';
   inset: 0;
   position: absolute;
@@ -46,14 +46,18 @@ a:before {
     conic-gradient(from var(--_gradient-direction), var(--_conic-gradient)) border-box;
 }
 
-a:hover:before {
+button:hover:before {
   border-width: var(--rh-border-width-md, 2px);
 }
 
-a:is(:focus-visible, :hover:focus-visible, :active) {
+button:is(:focus-visible, :hover:focus-visible, :active) {
   outline:
     var(--rh-border-width-md, 2px)
     solid
     var(--rh-color-interactive-primary-default);
   border-radius: var(--rh-border-radius-default, 3px);
+}
+
+span {
+  line-height: var(--rh-line-height-body-text, 1.5);
 }
