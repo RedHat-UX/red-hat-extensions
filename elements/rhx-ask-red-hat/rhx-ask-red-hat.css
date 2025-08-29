@@ -1,71 +1,56 @@
 /* stylelint-disable function-no-unknown */
 :host {
-  --_gradient:
-    linear-gradient(to right,
-      var(--rh-color-brand-red-light, #f56e6e),
-      var(--rh-color-purple-40, #876fd4),
-      var(--rh-color-purple-60, #3d2785));
+  --_color-stop-start: var(--rh-color-brand-red-light, #f56e6e);
+  --_color-stop-middle: var(--rh-color-purple-40, #876fd4);
+  --_color-stop-end: var(--rh-color-purple-60, #3d2785);
+  --_linear-gradient: var(--_color-stop-start), var(--_color-stop-middle), var(--_color-stop-end);
+  --_conic-gradient: var(--_linear-gradient), var(--_color-stop-middle), var(--_color-stop-start);
+  --_gradient-direction: -90deg;
+  --_gradient-ring: linear-gradient(light-dark(var(--rh-color-surface-lighter, #f2f2f2), var(--rh-color-surface-darker, #1f1f1f)) 0 0) padding-box, conic-gradient(from var(--_gradient-direction), var(--_conic-gradient)) border-box;
+
+  display: inline-block;
 }
 
-svg {
-  inline-size: var(--rh-size-icon-01, 16px);
-  block-size: var(--rh-size-icon-01, 16px);
-  fill: var(--rh-color-purple-60, #3d2785);
+rh-icon {
+  --rh-icon-size: var(--rh-size-icon-01, 16px);
+
+  color: light-dark(var(--rh-color-purple-60, #3d2785), var(--rh-color-purple-20, #d0c5f4));
 }
 
-@media (width >= 768px) {
-  svg {
-    fill: var(--rh-color-purple-20, #d0c5f4);
-  }
-}
-
+::slotted(a),
 a {
   display: flex;
-  flex-direction: row;
-  position: relative;
   gap: var(--rh-space-md, 8px);
-  block-size: max-content;
-  inline-size: max-content;
   align-items: center;
-  padding: var(--rh-space-sm, 6px)  var(--rh-space-md, 8px);
-  border:
-    var(--rh-border-width-sm, 1px)
-    solid
-    var(--rh-color-border-subtle);
+  block-size: max-content;
+  border: var(--rh-border-width-sm, 1px) solid transparent;
   border-radius: var(--rh-border-radius-default, 3px);
-  font-size: var(--rh-font-size-body-text-md, 1rem);
-  color: var(--rh-color-text-primary);
-}
-
-a:before {
-  --_mask: conic-gradient(#000000 0 0);
-
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: var(--rh-border-width-sm, 1px);
-  background: var(--_gradient);
-  mask: var(--_mask) content-box exclude, var(--_mask);
+  cursor: pointer;
+  font-size: var(--rh-font-size-body-text-sm, 0.875rem);
+  inline-size: max-content;
+  padding: var(--rh-space-md, 8px) var(--rh-space-lg, 16px);
+  position: relative;
   z-index: 1;
+  color: var(--rh-color-text-primary);
+  text-decoration: none;
 }
 
-a:active {
-  &:before {
-    padding: var(--rh-border-width-md, 2px);
-  }
+::slotted(a):before,
+a:before {
+  content: '';
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+  border: var(--rh-border-width-sm, 1px) solid transparent;
+  border-radius: inherit;
+  background:
+    linear-gradient(var(--rh-color-surface, light-dark(var(--rh-color-surface-lightest, #ffffff), var(--rh-color-surface-lighter, #f2f2f2))) 0 0) padding-box,
+    conic-gradient(from var(--_gradient-direction), var(--_conic-gradient)) border-box;
 }
 
-a:is(:hover, :focus-visible) {
-  background-color:
-    light-dark(var(--rh-color-surface-lighter, #f2f2f2),
-      var(--rh-color-surface-darker, #1f1f1f));
-}
-
-a:is(:hover, :focus-visible):before {
-  --_mask: conic-gradient(#000000 0 0);
-
-  padding: 2px;
+::slotted(a:hover):before,
+a:hover:before {
+  border-width: var(--rh-border-width-md, 2px);
 }
 
 a:is(:focus-visible, :hover:focus-visible, :active) {
@@ -73,12 +58,5 @@ a:is(:focus-visible, :hover:focus-visible, :active) {
     var(--rh-border-width-md, 2px)
     solid
     var(--rh-color-interactive-primary-default);
-  outline-offset: 3px;
   border-radius: var(--rh-border-radius-default, 3px);
-}
-
-@media (width >= 768px) {
-  a {
-    margin: 0 var(--rh-space-2xl, 32px) 0 0;
-  }
 }
