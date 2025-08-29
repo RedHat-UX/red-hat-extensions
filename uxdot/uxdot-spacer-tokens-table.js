@@ -50,9 +50,7 @@ let UxdotSpacerTokensTable = class UxdotSpacerTokensTable extends LitElement {
               <th scope="col"></th>
             </tr>
           </thead>
-          <tbody>${metaData
-            .map(assignBasename)
-            .map(token => html `
+          <tbody>${metaData.map(assignBasename).map(token => html `
             <tr>
               <td data-label="Example">
                 <samp class="${classMap({ space: true, [token.baseName]: true })}"
