@@ -12,10 +12,8 @@ describe('<rhx-ask-red-hat-button>', function() {
     it('should upgrade', async function() {
       element = await createFixture<RhxAskRedHatButton>(html`<rhx-ask-red-hat-button></rhx-ask-red-hat-button>`);
       const klass = customElements.get('rhx-ask-red-hat-button');
-      expect(element)
-        .to.be.an.instanceOf(klass)
-        .and
-        .to.be.an.instanceOf(RhxAskRedHatButton);
+      expect(element).to.be.an.instanceOf(klass).and.to.be.an.instanceOf(RhxAskRedHatButton);
+      expect(element.render()).to.equal('Ask a Question');
     });
-  })
+  });
 });

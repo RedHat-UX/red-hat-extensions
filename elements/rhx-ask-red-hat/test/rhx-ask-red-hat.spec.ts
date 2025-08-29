@@ -12,10 +12,7 @@ describe('<rhx-ask-red-hat>', function() {
     it('should upgrade', async function() {
       element = await createFixture<RhxAskRedHat>(html`<rhx-ask-red-hat></rhx-ask-red-hat>`);
       const klass = customElements.get('rhx-ask-red-hat');
-      expect(element)
-        .to.be.an.instanceOf(klass)
-        .and
-        .to.be.an.instanceOf(RhxAskRedHat);
+      expect(element).to.be.an.instanceOf(klass).and.to.be.an.instanceOf(RhxAskRedHat);
     });
-  })
+  });
 });
