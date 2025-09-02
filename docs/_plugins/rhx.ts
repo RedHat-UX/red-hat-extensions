@@ -156,7 +156,6 @@ export default async function(eleventyConfig: UserConfig, options?: Options) {
   });
 
   eleventyConfig.on('eleventy.after', async function({ runMode }) {
-    console.log('eleventy.after', runMode);
     const cwd = process.cwd();
     const pkgsDir = join(cwd, '_site/assets/packages');
     switch (runMode) {
@@ -182,6 +181,7 @@ export default async function(eleventyConfig: UserConfig, options?: Options) {
     const pkgsDir = join(cwd, '_site/assets/packages');
     switch (runMode) {
       case 'build':
+      case 'serve':
         await $`npx tspc -b uxdot`;
         await mkdir(join(pkgsDir, '@uxdot/elements'), { recursive: true });
         for await (const file of glob('./uxdot/*.{js,d.ts,map,css}')) {

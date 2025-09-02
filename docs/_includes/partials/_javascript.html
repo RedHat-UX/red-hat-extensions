@@ -11,17 +11,20 @@
   </script>
 
   {# load all components #}
-  {% for tag in importElements %}
+  {# {% for tag in importElements %}
     {% set packageName = "rhx" %}
     {% if 'rh-' in tag %}
       {% set packageName = "rhds" %}
     {% endif %}
     <script type="module">import '@{{packageName}}/elements/{{tag}}/{{tag}}.js';</script>
-  {% endfor %}
+  {% endfor %} #}
+  <script type="importmap">{{ importMap | dump(2) | safe }}</script>
+
 
   {# load sitewide components that need hydrated (aka interactivity) #}
   <script type="module">
-    import '@rhds/elements/rh-footer/rh-footer-universal.js';
+    import '@uxdot/elements/uxdot-masthead.js';
     import '@uxdot/elements/uxdot-sidenav.js';
+    import '@rhds/elements/rh-footer/rh-footer-universal.js';
   </script>
 

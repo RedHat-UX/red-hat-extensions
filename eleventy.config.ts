@@ -68,6 +68,7 @@ export default async function(eleventyConfig: UserConfig) {
   eleventyConfig.addPassthroughCopy('docs/styles/**/*');
   eleventyConfig.addPassthroughCopy('docs/fonts/**/*');
   eleventyConfig.addPassthroughCopy('docs/images/**/*');
+  eleventyConfig.addPassthroughCopy('docs/assets/**/*');
   eleventyConfig.addPassthroughCopy('docs/**/*.{css,js}');
 
   if (isLocal) {
