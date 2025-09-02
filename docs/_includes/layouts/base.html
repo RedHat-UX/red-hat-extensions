@@ -3,6 +3,8 @@
   <head>
     {% include "../partials/_meta.html" %}
 
+    {% include "../partials/_javascript.html" %}
+
     {# load lightdomcss #}
     {% for tag in importLightDomCss %}
       {% set packageName = "rhx" %}
@@ -12,7 +14,6 @@
       <link rel="stylesheet" href="/assets/packages/@{{packageName}}/elements/elements/{{tag}}/{{tag}}-lightdom.css">
     {% endfor %}
 
-    {% include "../partials/_javascript.html" %}
 
    {# On browsers that don't yet support native declarative shadow DOM, a
       paint can occur after some or all pre-rendered HTML has been parsed,
