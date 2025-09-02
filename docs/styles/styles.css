@@ -106,8 +106,8 @@
 
   #main,
   uxdot-sidenav {
-    --rh-color-surface: light-dark(
-      var(--rh-color-surface-lightest),
+    --rh-color-surface:
+      light-dark(var(--rh-color-surface-lightest),
         var(--rh-color-surface-darker));
   }
 
