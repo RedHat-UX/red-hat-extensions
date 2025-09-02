@@ -121,6 +121,7 @@ export default async function(eleventyConfig: UserConfig) {
         '@patternfly/elements/': '/assets/packages/@patternfly/elements/',
         '@patternfly/icons/': '/assets/packages/@patternfly/icons/',
         '@patternfly/pfe-core/': '/assets/packages/@patternfly/pfe-core/',
+        '@patternfly/pfe-core': '/assets/packages/@patternfly/pfe-core/core.js',
         '@uxdot/elements/': '/assets/packages/@uxdot/elements/',
       },
     },
@@ -147,6 +148,7 @@ export default async function(eleventyConfig: UserConfig) {
       '@rhds/icons/ui/',
       '@patternfly/elements/',
       '@patternfly/pfe-core/',
+      '@patternfly/pfe-core/core.js',
 
       // Vendor
       '@floating-ui/core',
