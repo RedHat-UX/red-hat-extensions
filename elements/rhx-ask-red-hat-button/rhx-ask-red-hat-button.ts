@@ -14,8 +14,8 @@ import '@rhds/elements/rh-icon/rh-icon.js';
 import styles from './rhx-ask-red-hat-button.css';
 
 /**
- * A stylized link or button to the Ask Red Hat AI assistant.
- * @summary A stylized link to the Ask Red Hat AI assistant.
+ * A stylized button used to trigger and action on the same page related to the Ask Red Hat AI assistant.
+ * @summary A stylized button to trigger the Ask Red Hat AI assistant on the same page.
  */
 
 @customElement('rhx-ask-red-hat-button')
