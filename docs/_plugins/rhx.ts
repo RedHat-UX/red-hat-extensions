@@ -156,10 +156,12 @@ export default async function(eleventyConfig: UserConfig, options?: Options) {
   });
 
   eleventyConfig.on('eleventy.after', async function({ runMode }) {
+    console.log('eleventy.after', runMode);
     const cwd = process.cwd();
     const pkgsDir = join(cwd, '_site/assets/packages');
     switch (runMode) {
       case 'build':
+      case 'serve':
         await $`npx tspc -b elements`;
         await mkdir(join(pkgsDir, '@rhdx/elements/elements'), { recursive: true });
         await mkdir(join(pkgsDir, '@rhdx/elements/lib'), { recursive: true });
