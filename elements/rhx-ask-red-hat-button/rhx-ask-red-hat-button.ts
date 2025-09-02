@@ -17,7 +17,6 @@ import styles from './rhx-ask-red-hat-button.css';
  * A stylized button used to trigger and action on the same page related to the Ask Red Hat AI assistant.
  * @summary A stylized button to trigger the Ask Red Hat AI assistant on the same page.
  */
-
 @customElement('rhx-ask-red-hat-button')
 @themable
 export class RhxAskRedHatButton extends LitElement {
