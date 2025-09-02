@@ -669,13 +669,16 @@ export default class ElementsPage extends Renderer<Context> {
   }
 
   async #renderDemos(ctx: Context) {
-    const demos = ctx.demos.map((demo: DemoRecord) => {
-      return html`
-        <rh-tile>
-          <h2 slot="headline"><a href="${demo.permalink}">${demo.title}</a></h2>
-        </rh-tile>
-      `;
-    });
+    /* filter ctx demos to only the tagName */
+    const demos = ctx.demos.filter((demo: DemoRecord) => demo.tagName === ctx.tagName)
+        .map((demo: DemoRecord) => {
+          return html`
+            <rh-tile>
+              <h2 slot="headline"><a href="${demo.permalink}">${demo.title}</a></h2>
+            </rh-tile>
+          `;
+        });
+
     return html`
       <script type="module" data-helmet>
         import '@rhds/elements/rh-tile/rh-tile.js';

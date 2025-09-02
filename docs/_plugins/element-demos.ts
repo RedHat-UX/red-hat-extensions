@@ -34,8 +34,8 @@ export default function(eleventyConfig: UserConfig) {
             return '';
           } else if (!val.startsWith('http') && !val.startsWith('/') && !val.startsWith('#')) {
             Tools.setAttribute(node, attr, `${isNested ? '../' : ''}${val}`);
-          } else if (val.startsWith('/elements/rh-')) {
-            Tools.setAttribute(node, attr, val.replace('/elements/rh-', '/'));
+          } else if (val.startsWith('/elements/rhx-')) {
+            Tools.setAttribute(node, attr, val.replace('/elements/rhx-', '/'));
           }
         }
       }
