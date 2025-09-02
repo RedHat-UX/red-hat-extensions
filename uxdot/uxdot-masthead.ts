@@ -21,18 +21,18 @@ export class UxdotMasthead extends LitElement {
         <div id="logo">
           <a href="/">
             <img alt="Red Hat Design System logo"
-                 src="/assets/red-hat-design-system.svg"
+                 src="/images/red-hat-design-system.svg"
                  width="188"
                  height="40">
           </a>
         </div>
         <uxdot-color-scheme-picker id="scheme"></uxdot-color-scheme-picker>
         <div id="links">
-          <a id="github" href="https://github.com/RedHat-UX/red-hat-design-system/">
+          <a id="github" href="https://github.com/RedHat-UX/red-hat-extensions/">
             <span class="display-xs">Contribute on Github</span>
             <rh-icon set="social" icon="github" size="lg"></rh-icon>
           </a>
-          <a id="version" href="https://github.com/RedHat-UX/red-hat-design-system/releases/tag/v${version}/"
+          <a id="version" href="https://github.com/RedHat-UX/red-hat-extensions/releases/tag/v${version}/"
              title="Version ${version}"
              aria-label="Version ${version}">v${version}</a>
         </div>
