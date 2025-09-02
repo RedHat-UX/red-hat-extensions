@@ -12,6 +12,7 @@ export default tseslint.config(
       'node_modules',
       'node_modules/**/*',
       '_site',
+      'rhdx.min.js',
 
       '**/*.d.ts',
       '**/*.(spec|e2e).js',
@@ -25,7 +26,12 @@ export default tseslint.config(
       'docs/bundle.js',
       'docs/core',
       'docs/components',
-      'docs/_plugins/lit-ssr/worker.js',
+      'docs/_plugins/**/*.js',
+      'docs/_data/repoStatus.js',
+      'docs/assets/javascript/elements/uxdot/*.js.map',
+      'docs/assets/javascript/elements/uxdot/*.d.ts',
+      'docs/assets/javascript/elements/uxdot/*.js',
+      'node_modules',
 
       '!core/*/demo/*.js',
       '!elements/*/demo/*.js',
@@ -43,5 +49,11 @@ export default tseslint.config(
       },
     },
   },
+  {
+    name: 'local/docs/overrides',
+    files: ['docs/theming/code-samples/*.*'],
+    rules: {
+      '@stylistic/no-multi-spaces': ['off'],
+    },
+  }
 );
-

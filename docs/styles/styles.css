@@ -106,7 +106,9 @@
 
   #main,
   uxdot-sidenav {
-    --rh-color-surface: light-dark(var(--rh-color-surface-lightest), var(--rh-color-surface-darker));
+    --rh-color-surface: light-dark(
+      var(--rh-color-surface-lightest),
+        var(--rh-color-surface-darker));
   }
 
   /* stylelint-disable rhds/token-values */
