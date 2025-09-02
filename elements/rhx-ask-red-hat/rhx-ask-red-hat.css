@@ -26,7 +26,8 @@ a {
   gap: var(--rh-space-md, 8px);
   align-items: center;
   block-size: max-content;
-  border: var(--rh-border-width-sm, 1px) solid transparent;
+
+  /* border: var(--rh-border-width-sm, 1px) solid transparent; */
   border-radius: var(--rh-border-radius-default, 3px);
   cursor: pointer;
   font-size: var(--rh-font-size-body-text-sm, 0.875rem);

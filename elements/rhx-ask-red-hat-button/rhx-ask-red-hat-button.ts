@@ -7,6 +7,7 @@ import { query } from 'lit/decorators/query.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
 import { InternalsController } from '@patternfly/pfe-core/controllers/internals-controller.js';
+import { themable } from '@rhds/elements/lib/themable.js';
 
 import '@rhds/elements/rh-icon/rh-icon.js';
 
@@ -16,7 +17,9 @@ import styles from './rhx-ask-red-hat-button.css';
  * A stylized link or button to the Ask Red Hat AI assistant.
  * @summary A stylized link to the Ask Red Hat AI assistant.
  */
+
 @customElement('rhx-ask-red-hat-button')
+@themable
 export class RhxAskRedHatButton extends LitElement {
   static readonly styles = [styles];
 

@@ -4,6 +4,7 @@ import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { property } from 'lit/decorators/property.js';
 
+import { themable } from '@rhds/elements/lib/themable.js';
 import '@rhds/elements/rh-icon/rh-icon.js';
 
 import styles from './rhx-ask-red-hat.css';
@@ -12,7 +13,9 @@ import styles from './rhx-ask-red-hat.css';
  * A stylized link or button to the Ask Red Hat AI assistant.
  * @summary A stylized link to the Ask Red Hat AI assistant.
  */
+
 @customElement('rhx-ask-red-hat')
+@themable
 export class RhxAskRedHat extends LitElement {
   static readonly styles = [styles];
 
