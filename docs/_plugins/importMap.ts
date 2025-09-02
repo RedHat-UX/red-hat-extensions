@@ -67,31 +67,18 @@ async function getCachedImportMap({
     try {
       performance.mark('importMap-start');
 
-      // This is the original code that was used to configure the import map
-      // to use the nodemodules provider for all local packages.
-      // It was removed because it was causing issues with the import map
-      // not being able to resolve the packages.
-      // This is still configured this way upstream in the RHDS project,
-      // unsure why it was causing issues here.
+      const nothing = Symbol();
+      const providers = {
+        '@patternfly/elements': 'nodemodules',
+        ...Object.fromEntries(localPackages?.map(packageName => {
+          console.log('packageName', packageName);
+          return packageName.match(/@patternfly/) ?
+            [nothing]
+            : [packageName, 'nodemodules'];
+        }) ?? []),
+      };
 
-      // const nothing = Symbol();
-      // const providers = {
-      //   '@patternfly/elements': 'nodemodules',
-      //   ...Object.fromEntries(localPackages?.map(packageName =>
-      //     packageName.match(/@patternfly/) ?
-      //       [nothing]
-      //       : [packageName, 'nodemodules']) ?? []),
-      // };
-
-      // delete providers[nothing];
-
-
-      // Configure all localPackages to use nodemodules provider
-      const providers = Object.fromEntries(
-        localPackages
-            .filter(packageName => !packageName.endsWith('/'))
-            .map(packageName => [packageName, 'nodemodules'])
-      );
+      delete providers[nothing];
 
       const generator = new Generator({
         env: ['production', 'browser', 'module'],
@@ -100,7 +87,9 @@ async function getCachedImportMap({
         providers,
       });
 
-      await generator.install(localPackages.filter(x => !x.endsWith('/')));
+      const filterdLocalPackages = localPackages.filter(x => !x.endsWith('/'));
+
+      await generator.install(filterdLocalPackages);
 
       performance.mark('importMap-afterLocalPackages');
 
