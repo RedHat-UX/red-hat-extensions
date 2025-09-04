@@ -3,6 +3,8 @@
   <head>
     {% include "../partials/_meta.html" %}
 
+    {% include "../partials/_javascript.html" %}
+
     {# load lightdomcss #}
     {% for tag in importLightDomCss %}
       {% set packageName = "rhx" %}
@@ -12,7 +14,6 @@
       <link rel="stylesheet" href="/assets/packages/@{{packageName}}/elements/elements/{{tag}}/{{tag}}-lightdom.css">
     {% endfor %}
 
-    {% include "../partials/_javascript.html" %}
 
    {# On browsers that don't yet support native declarative shadow DOM, a
       paint can occur after some or all pre-rendered HTML has been parsed,
@@ -44,13 +45,15 @@
 
   </head>
   <body>
+    <rh-skip-link href="#main">Skip to main content</rh-skip-link>
+
     {% include "../partials/_masthead.html" %}
 
     {% include "../partials/_sidenav.html" %}
 
-    <rh-surface id="main" color-palette="lightest" role="main">
+    <main id="main">
       {{ content | safe }}
-    </rh-surface>
+    </main>
 
     {% include "../partials/_footer.html" %}
   </body>
