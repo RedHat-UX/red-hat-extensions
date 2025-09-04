@@ -68,6 +68,7 @@ export default async function(eleventyConfig: UserConfig) {
   eleventyConfig.addPassthroughCopy('docs/styles/**/*');
   eleventyConfig.addPassthroughCopy('docs/fonts/**/*');
   eleventyConfig.addPassthroughCopy('docs/images/**/*');
+  eleventyConfig.addPassthroughCopy('docs/assets/**/*');
   eleventyConfig.addPassthroughCopy('docs/**/*.{css,js}');
 
   if (isLocal) {
@@ -108,9 +109,6 @@ export default async function(eleventyConfig: UserConfig) {
         'lit-html': '/assets/packages/lit-html/lit-html.js',
         'lit-html/': '/assets/packages/lit-html/',
         'prism-esm/': '/assets/packages/prism-esm/',
-        'tslib/': '/assets/packages/tslib/',
-        '@floating-ui/core/': '/assets/packages/@floating-ui/core/',
-        '@floating-ui/dom/': '/assets/packages/@floating-ui/dom/',
         '@lit-labs/ssr-client/lit-element-hydrate-support.js': `/assets/packages/@lit-labs/ssr-client/lit-element-hydrate-support.js`,
         '@rhds/tokens': '/assets/packages/@rhds/tokens/js/tokens.js',
         '@rhds/tokens/css/': '/assets/packages/@rhds/tokens/css/',
@@ -119,13 +117,12 @@ export default async function(eleventyConfig: UserConfig) {
         '@rhds/elements/': '/assets/packages/@rhds/elements/elements/',
         '@rhds/icons/': '/assets/packages/@rhds/icons/',
         '@rhds/icons/icons.js': '/assets/packages/@rhds/icons/icons.js',
-        '@rhx/elements/': '/assets/packages/@rhx/elements/elements/',
+        '@rhdx/elements/': '/assets/packages/@rhdx/elements/elements/',
         '@patternfly/elements/': '/assets/packages/@patternfly/elements/',
         '@patternfly/icons/': '/assets/packages/@patternfly/icons/',
         '@patternfly/pfe-core/': '/assets/packages/@patternfly/pfe-core/',
+        '@patternfly/pfe-core': '/assets/packages/@patternfly/pfe-core/core.js',
         '@uxdot/elements/': '/assets/packages/@uxdot/elements/',
-        '@lit/reactive-element/decorators/': '/assets/packages/@lit/reactive-element/decorators/',
-        'playground-elements': 'https://cdn.jsdelivr.net/npm/playground-elements@0.18.1/+esm',
       },
     },
     localPackages: [
@@ -138,19 +135,20 @@ export default async function(eleventyConfig: UserConfig) {
       // `manualImportMap` is not traced, so we need to manually specify these
       //
       // 1st party
-      '@rhds/elements',
+      '@rhds/elements/',
       '@rhds/tokens',
       '@rhds/tokens/media.js',
       '@rhds/tokens/meta.js',
-      '@rhds/tokens/css/color-context-provider.css.js',
-      '@rhds/tokens/css/color-context-consumer.css.js',
+      '@rhds/tokens/css/default-theme.css.js',
+      '@rhds/tokens/css/color-palette.css.js',
       '@rhds/icons/',
       '@rhds/icons/microns/',
       '@rhds/icons/social/',
       '@rhds/icons/standard/',
       '@rhds/icons/ui/',
-      '@patternfly/elements',
-      '@patternfly/pfe-core',
+      '@patternfly/elements/',
+      '@patternfly/pfe-core/',
+      '@patternfly/pfe-core/core.js',
 
       // Vendor
       '@floating-ui/core',

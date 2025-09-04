@@ -160,12 +160,13 @@ export default async function(eleventyConfig: UserConfig, options?: Options) {
     const pkgsDir = join(cwd, '_site/assets/packages');
     switch (runMode) {
       case 'build':
+      case 'serve':
         await $`npx tspc -b elements`;
-        await mkdir(join(pkgsDir, '@rhx/elements/elements'), { recursive: true });
-        await mkdir(join(pkgsDir, '@rhx/elements/lib'), { recursive: true });
+        await mkdir(join(pkgsDir, '@rhdx/elements/elements'), { recursive: true });
+        await mkdir(join(pkgsDir, '@rhdx/elements/lib'), { recursive: true });
         for await (const file of glob('./{elements,lib}/**/*.{js,d.ts,map,css}')) {
           const rel = relative(cwd, file);
-          const outDir = join(pkgsDir, '@rhx/elements');
+          const outDir = join(pkgsDir, '@rhdx/elements');
           const out = join(outDir, dirname(rel));
           const from = join(cwd, rel);
           const to = join(outDir, rel);
@@ -180,6 +181,7 @@ export default async function(eleventyConfig: UserConfig, options?: Options) {
     const pkgsDir = join(cwd, '_site/assets/packages');
     switch (runMode) {
       case 'build':
+      case 'serve':
         await $`npx tspc -b uxdot`;
         await mkdir(join(pkgsDir, '@uxdot/elements'), { recursive: true });
         for await (const file of glob('./uxdot/*.{js,d.ts,map,css}')) {
