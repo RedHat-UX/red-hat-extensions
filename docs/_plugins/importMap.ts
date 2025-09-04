@@ -68,17 +68,16 @@ async function getCachedImportMap({
       performance.mark('importMap-start');
 
       const nothing = Symbol();
-      // const providers = {
-      //   '@patternfly/elements': 'nodemodules',
-      //   ...Object.fromEntries(localPackages?.map(packageName =>
-      //     packageName.match(/@patternfly/) ?
-      //       [nothing]
-      //       : [packageName, 'nodemodules']) ?? []),
-      // };
       const providers = {
+        '@patternfly/elements': 'nodemodules',
+        ...Object.fromEntries(localPackages?.map(packageName => {
+          return packageName.match(/@patternfly/) ?
+            [nothing]
+            : [packageName, 'nodemodules'];
+        }) ?? []),
       };
 
-      // delete providers[nothing];
+      delete providers[nothing];
 
       const generator = new Generator({
         env: ['production', 'browser', 'module'],
@@ -87,7 +86,9 @@ async function getCachedImportMap({
         providers,
       });
 
-      await generator.install(localPackages.filter(x => !x.endsWith('/')));
+      const filterdLocalPackages = localPackages.filter(x => !x.endsWith('/'));
+
+      await generator.install(filterdLocalPackages);
 
       performance.mark('importMap-afterLocalPackages');
 

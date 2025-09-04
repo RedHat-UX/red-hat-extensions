@@ -29,7 +29,7 @@ async function resolveLocal(pattern, relativeTo = './') {
   for await (const file of glob(pattern, { cwd: join(process.cwd(), relativeTo) })) {
     if (!TEST_RE.test(file)) {
       files.push([
-        `@rhx/elements/${file.replace('.ts', '.js')}`,
+        `@rhdx/elements/${file.replace('.ts', '.js')}`,
         join(relativeTo, file).replace('./', '/'),
       ]);
     }
@@ -54,6 +54,7 @@ function injectManuallyResolvedModulesToImportMap(document) {
     Object.assign(json.imports, {
       'lit': '/node_modules/lit/index.js',
       'lit/': '/node_modules/lit/',
+      '@lit/context': '/node_modules/@lit/context/index.js',
       '@patternfly/pfe-core': '/node_modules/@patternfly/pfe-core/core.js',
       '@patternfly/pfe-core/': '/node_modules/@patternfly/pfe-core/',
       '@rhds/elements/lib/': '/node_modules/@rhds/elements/lib/',
@@ -67,6 +68,7 @@ function injectManuallyResolvedModulesToImportMap(document) {
     /* Overriding scopes here due to an issue with incorrect pathing to @rhds/elements/lib/ */
     Object.assign(json.scopes, {
       '/': {
+        '@lit/context': '/node_modules/@lit/context/index.js',
         '@lit/reactive-element': '/node_modules/@lit/reactive-element/development/reactive-element.js',
         '@lit/reactive-element/decorators/': '/node_modules/@lit/reactive-element/development/decorators/',
         '@patternfly/': '/node_modules/@patternfly/',

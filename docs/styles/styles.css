@@ -104,6 +104,13 @@
     grid-template-areas: 'header' 'nav' 'main' 'footer';
   }
 
+  #main,
+  uxdot-sidenav {
+    --rh-color-surface:
+      light-dark(var(--rh-color-surface-lightest),
+        var(--rh-color-surface-darker));
+  }
+
   /* stylelint-disable rhds/token-values */
   #main {
     grid-area: main;
@@ -114,7 +121,9 @@
     container-type: inline-size;
     container-name: main;
     padding-block-start: var(--uxdot-masthead-max-height);
+    background-color: var(--rh-color-surface);
   }
+
   /* stylelint-enable rhds/token-values */
 
   .container {
