@@ -52,7 +52,7 @@
 
 [part='overlay'] {
   display: none;
-  background-color: rgb(from var(---rh-color-gray-90) / var(--rh-opacity-60));
+  background-color: rgb(from var(--rh-color-gray-90) / var(--rh-opacity-60));
   position: fixed;
   top: 0;
   height: 100dvh;
