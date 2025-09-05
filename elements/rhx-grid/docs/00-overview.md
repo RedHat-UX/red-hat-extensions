@@ -1,7 +1,7 @@
 <style data-helmet>
   /* Sample element styles */
   rhx-grid {
-    background: var(--rh-color-surface-lighter, #f2f2f2);
+    background: light-dark(var(--rh-color-surface-lighter, #f2f2f2), var(--rh-color-surface-darker, #1f1f1f))
 
     & > div, 
     & rhx-grid-item {

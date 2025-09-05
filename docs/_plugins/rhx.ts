@@ -160,6 +160,7 @@ export default async function(eleventyConfig: UserConfig, options?: Options) {
     const pkgsDir = join(cwd, '_site/assets/packages');
     switch (runMode) {
       case 'build':
+      case 'serve':
         await $`npx tspc -b elements`;
         await mkdir(join(pkgsDir, '@rhdx/elements/elements'), { recursive: true });
         await mkdir(join(pkgsDir, '@rhdx/elements/lib'), { recursive: true });
@@ -180,6 +181,7 @@ export default async function(eleventyConfig: UserConfig, options?: Options) {
     const pkgsDir = join(cwd, '_site/assets/packages');
     switch (runMode) {
       case 'build':
+      case 'serve':
         await $`npx tspc -b uxdot`;
         await mkdir(join(pkgsDir, '@uxdot/elements'), { recursive: true });
         for await (const file of glob('./uxdot/*.{js,d.ts,map,css}')) {

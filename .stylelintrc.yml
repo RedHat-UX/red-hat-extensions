@@ -8,9 +8,8 @@ plugins:
 
 ignoreFiles:
   - node_modules/**/*
-  - docs/javascript/elements/*.js
-  - uxdot/*.js
-  - elements/**/*.js
+  - docs/assets/javascript/elements/*.js
+
 rules:
   alpha-value-notation: number # TODO: fix for `percentage` in tokens
   color-hex-length: long
@@ -25,7 +24,7 @@ rules:
     - ignoreShorthands:
         - /grid/
 
-
+  media-feature-range-notation: null
   number-max-precision: 6
   no-descending-specificity:
     - true
@@ -68,6 +67,8 @@ rules:
     - true
     - allowed:
       - --rh-icon-size
+      - --rh-navigation-active-item-color
+      - --rh-jump-link-max-width
 
 overrides:
   - files:
