@@ -294,7 +294,7 @@
     "markdown-it-attrs": "^4.2.0",
     "markdown-it-footnote": "^4.0.0",
     "markdownlint-cli2": "^0.14.0",
-    "parse5": "^7.2.0",
+    "parse5": "^8.0.0",
     "patch-package": "^8.0.0",
     "piscina": "^4.7.0",
     "postcss-pxtorem": "^6.1.0",
